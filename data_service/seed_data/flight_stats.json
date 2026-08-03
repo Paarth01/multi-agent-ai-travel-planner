@@ -1,0 +1,2422 @@
+{
+  "Bangalore->Chennai": [
+    {
+      "airline": "AirAsia",
+      "class": "Economy",
+      "mean_price": 2073.04,
+      "std_price": 770.22,
+      "min_price": 1603.0,
+      "max_price": 4285.0,
+      "mean_duration_hours": 1.04,
+      "sample_count": 138
+    },
+    {
+      "airline": "Air_India",
+      "class": "Business",
+      "mean_price": 56301.93,
+      "std_price": 7719.57,
+      "min_price": 12136.0,
+      "max_price": 88030.0,
+      "mean_duration_hours": 15.46,
+      "sample_count": 621
+    },
+    {
+      "airline": "Air_India",
+      "class": "Economy",
+      "mean_price": 8219.48,
+      "std_price": 4616.65,
+      "min_price": 1966.0,
+      "max_price": 28174.0,
+      "mean_duration_hours": 18.02,
+      "sample_count": 989
+    },
+    {
+      "airline": "GO_FIRST",
+      "class": "Economy",
+      "mean_price": 5351.95,
+      "std_price": 2677.55,
+      "min_price": 3091.0,
+      "max_price": 12920.0,
+      "mean_duration_hours": 10.52,
+      "sample_count": 369
+    },
+    {
+      "airline": "Indigo",
+      "class": "Economy",
+      "mean_price": 2363.33,
+      "std_price": 1200.65,
+      "min_price": 1604.0,
+      "max_price": 9693.0,
+      "mean_duration_hours": 1.04,
+      "sample_count": 282
+    },
+    {
+      "airline": "SpiceJet",
+      "class": "Economy",
+      "mean_price": 2613.31,
+      "std_price": 921.33,
+      "min_price": 1606.0,
+      "max_price": 6017.0,
+      "mean_duration_hours": 1.08,
+      "sample_count": 58
+    },
+    {
+      "airline": "Vistara",
+      "class": "Business",
+      "mean_price": 51001.4,
+      "std_price": 8388.2,
+      "min_price": 44280.0,
+      "max_price": 90720.0,
+      "mean_duration_hours": 15.65,
+      "sample_count": 1672
+    },
+    {
+      "airline": "Vistara",
+      "class": "Economy",
+      "mean_price": 7911.96,
+      "std_price": 3806.58,
+      "min_price": 4672.0,
+      "max_price": 25917.0,
+      "mean_duration_hours": 15.28,
+      "sample_count": 2281
+    }
+  ],
+  "Bangalore->Delhi": [
+    {
+      "airline": "AirAsia",
+      "class": "Economy",
+      "mean_price": 4807.09,
+      "std_price": 3078.92,
+      "min_price": 2723.0,
+      "max_price": 22471.0,
+      "mean_duration_hours": 8.08,
+      "sample_count": 1558
+    },
+    {
+      "airline": "Air_India",
+      "class": "Business",
+      "mean_price": 40608.95,
+      "std_price": 6083.31,
+      "min_price": 32923.0,
+      "max_price": 64158.0,
+      "mean_duration_hours": 12.25,
+      "sample_count": 1083
+    },
+    {
+      "airline": "Air_India",
+      "class": "Economy",
+      "mean_price": 6787.89,
+      "std_price": 3566.2,
+      "min_price": 3674.0,
+      "max_price": 24604.0,
+      "mean_duration_hours": 13.56,
+      "sample_count": 1550
+    },
+    {
+      "airline": "GO_FIRST",
+      "class": "Economy",
+      "mean_price": 5524.7,
+      "std_price": 2857.56,
+      "min_price": 3319.0,
+      "max_price": 30284.0,
+      "mean_duration_hours": 7.48,
+      "sample_count": 1446
+    },
+    {
+      "airline": "Indigo",
+      "class": "Economy",
+      "mean_price": 6273.5,
+      "std_price": 3428.68,
+      "min_price": 3236.0,
+      "max_price": 23816.0,
+      "mean_duration_hours": 6.1,
+      "sample_count": 1961
+    },
+    {
+      "airline": "SpiceJet",
+      "class": "Economy",
+      "mean_price": 6901.62,
+      "std_price": 3515.42,
+      "min_price": 3101.0,
+      "max_price": 34158.0,
+      "mean_duration_hours": 13.19,
+      "sample_count": 735
+    },
+    {
+      "airline": "Vistara",
+      "class": "Business",
+      "mean_price": 51151.27,
+      "std_price": 9885.98,
+      "min_price": 32923.0,
+      "max_price": 111883.0,
+      "mean_duration_hours": 10.27,
+      "sample_count": 2714
+    },
+    {
+      "airline": "Vistara",
+      "class": "Economy",
+      "mean_price": 6505.51,
+      "std_price": 3616.06,
+      "min_price": 3346.0,
+      "max_price": 29119.0,
+      "mean_duration_hours": 10.09,
+      "sample_count": 2709
+    }
+  ],
+  "Bangalore->Hyderabad": [
+    {
+      "airline": "AirAsia",
+      "class": "Economy",
+      "mean_price": 2931.49,
+      "std_price": 1848.25,
+      "min_price": 1714.0,
+      "max_price": 11205.0,
+      "mean_duration_hours": 3.62,
+      "sample_count": 192
+    },
+    {
+      "airline": "Air_India",
+      "class": "Business",
+      "mean_price": 51169.9,
+      "std_price": 10995.32,
+      "min_price": 12000.0,
+      "max_price": 61212.0,
+      "mean_duration_hours": 15.14,
+      "sample_count": 791
+    },
+    {
+      "airline": "Air_India",
+      "class": "Economy",
+      "mean_price": 8107.72,
+      "std_price": 3796.84,
+      "min_price": 1966.0,
+      "max_price": 27610.0,
+      "mean_duration_hours": 18.38,
+      "sample_count": 1437
+    },
+    {
+      "airline": "GO_FIRST",
+      "class": "Economy",
+      "mean_price": 4828.22,
+      "std_price": 2025.33,
+      "min_price": 1714.0,
+      "max_price": 13498.0,
+      "mean_duration_hours": 9.38,
+      "sample_count": 473
+    },
+    {
+      "airline": "Indigo",
+      "class": "Economy",
+      "mean_price": 3220.66,
+      "std_price": 1871.87,
+      "min_price": 1694.0,
+      "max_price": 12003.0,
+      "mean_duration_hours": 5.01,
+      "sample_count": 1318
+    },
+    {
+      "airline": "SpiceJet",
+      "class": "Economy",
+      "mean_price": 4338.0,
+      "std_price": 0.0,
+      "min_price": 4338.0,
+      "max_price": 4338.0,
+      "mean_duration_hours": 1.05,
+      "sample_count": 31
+    },
+    {
+      "airline": "Vistara",
+      "class": "Business",
+      "mean_price": 50120.35,
+      "std_price": 10174.67,
+      "min_price": 37985.0,
+      "max_price": 83239.0,
+      "mean_duration_hours": 16.59,
+      "sample_count": 2223
+    },
+    {
+      "airline": "Vistara",
+      "class": "Economy",
+      "mean_price": 7607.46,
+      "std_price": 3236.43,
+      "min_price": 1714.0,
+      "max_price": 25654.0,
+      "mean_duration_hours": 16.0,
+      "sample_count": 2463
+    }
+  ],
+  "Bangalore->Kolkata": [
+    {
+      "airline": "AirAsia",
+      "class": "Economy",
+      "mean_price": 4443.47,
+      "std_price": 2772.16,
+      "min_price": 3185.0,
+      "max_price": 25993.0,
+      "mean_duration_hours": 7.56,
+      "sample_count": 848
+    },
+    {
+      "airline": "Air_India",
+      "class": "Business",
+      "mean_price": 55836.15,
+      "std_price": 10010.21,
+      "min_price": 25000.0,
+      "max_price": 62748.0,
+      "mean_duration_hours": 16.3,
+      "sample_count": 878
+    },
+    {
+      "airline": "Air_India",
+      "class": "Economy",
+      "mean_price": 8662.25,
+      "std_price": 4009.41,
+      "min_price": 3393.0,
+      "max_price": 22819.0,
+      "mean_duration_hours": 17.43,
+      "sample_count": 1148
+    },
+    {
+      "airline": "GO_FIRST",
+      "class": "Economy",
+      "mean_price": 5794.16,
+      "std_price": 2252.26,
+      "min_price": 3393.0,
+      "max_price": 27620.0,
+      "mean_duration_hours": 10.55,
+      "sample_count": 873
+    },
+    {
+      "airline": "Indigo",
+      "class": "Economy",
+      "mean_price": 6230.33,
+      "std_price": 3847.93,
+      "min_price": 3026.0,
+      "max_price": 29213.0,
+      "mean_duration_hours": 6.89,
+      "sample_count": 1637
+    },
+    {
+      "airline": "SpiceJet",
+      "class": "Economy",
+      "mean_price": 5297.97,
+      "std_price": 2578.43,
+      "min_price": 3393.0,
+      "max_price": 25024.0,
+      "mean_duration_hours": 8.89,
+      "sample_count": 274
+    },
+    {
+      "airline": "Vistara",
+      "class": "Business",
+      "mean_price": 60025.83,
+      "std_price": 8403.52,
+      "min_price": 51817.0,
+      "max_price": 105168.0,
+      "mean_duration_hours": 16.24,
+      "sample_count": 2263
+    },
+    {
+      "airline": "Vistara",
+      "class": "Economy",
+      "mean_price": 9670.0,
+      "std_price": 3558.91,
+      "min_price": 6271.0,
+      "max_price": 29382.0,
+      "mean_duration_hours": 14.69,
+      "sample_count": 2107
+    }
+  ],
+  "Bangalore->Mumbai": [
+    {
+      "airline": "AirAsia",
+      "class": "Economy",
+      "mean_price": 3342.39,
+      "std_price": 2057.69,
+      "min_price": 2201.0,
+      "max_price": 15022.0,
+      "mean_duration_hours": 8.32,
+      "sample_count": 628
+    },
+    {
+      "airline": "Air_India",
+      "class": "Business",
+      "mean_price": 51648.61,
+      "std_price": 9115.64,
+      "min_price": 20760.0,
+      "max_price": 75953.0,
+      "mean_duration_hours": 14.05,
+      "sample_count": 1467
+    },
+    {
+      "airline": "Air_India",
+      "class": "Economy",
+      "mean_price": 7342.07,
+      "std_price": 2922.54,
+      "min_price": 2208.0,
+      "max_price": 40354.0,
+      "mean_duration_hours": 14.96,
+      "sample_count": 2088
+    },
+    {
+      "airline": "GO_FIRST",
+      "class": "Economy",
+      "mean_price": 5533.8,
+      "std_price": 2332.3,
+      "min_price": 2201.0,
+      "max_price": 24809.0,
+      "mean_duration_hours": 9.78,
+      "sample_count": 1337
+    },
+    {
+      "airline": "Indigo",
+      "class": "Economy",
+      "mean_price": 5112.27,
+      "std_price": 3272.7,
+      "min_price": 2201.0,
+      "max_price": 24971.0,
+      "mean_duration_hours": 5.11,
+      "sample_count": 1882
+    },
+    {
+      "airline": "SpiceJet",
+      "class": "Economy",
+      "mean_price": 6058.64,
+      "std_price": 3438.42,
+      "min_price": 2202.0,
+      "max_price": 16728.0,
+      "mean_duration_hours": 13.22,
+      "sample_count": 157
+    },
+    {
+      "airline": "Vistara",
+      "class": "Business",
+      "mean_price": 61452.1,
+      "std_price": 17063.73,
+      "min_price": 20760.0,
+      "max_price": 103819.0,
+      "mean_duration_hours": 11.22,
+      "sample_count": 2729
+    },
+    {
+      "airline": "Vistara",
+      "class": "Economy",
+      "mean_price": 7691.23,
+      "std_price": 3634.49,
+      "min_price": 2150.0,
+      "max_price": 28836.0,
+      "mean_duration_hours": 10.81,
+      "sample_count": 2651
+    }
+  ],
+  "Chennai->Bangalore": [
+    {
+      "airline": "AirAsia",
+      "class": "Economy",
+      "mean_price": 1914.76,
+      "std_price": 996.77,
+      "min_price": 1443.0,
+      "max_price": 9557.0,
+      "mean_duration_hours": 1.18,
+      "sample_count": 138
+    },
+    {
+      "airline": "Air_India",
+      "class": "Business",
+      "mean_price": 56733.85,
+      "std_price": 8337.22,
+      "min_price": 12000.0,
+      "max_price": 89257.0,
+      "mean_duration_hours": 16.15,
+      "sample_count": 716
+    },
+    {
+      "airline": "Air_India",
+      "class": "Economy",
+      "mean_price": 8859.25,
+      "std_price": 5647.85,
+      "min_price": 1830.0,
+      "max_price": 36333.0,
+      "mean_duration_hours": 18.24,
+      "sample_count": 922
+    },
+    {
+      "airline": "GO_FIRST",
+      "class": "Economy",
+      "mean_price": 5643.07,
+      "std_price": 2844.32,
+      "min_price": 2212.0,
+      "max_price": 15289.0,
+      "mean_duration_hours": 9.1,
+      "sample_count": 382
+    },
+    {
+      "airline": "Indigo",
+      "class": "Economy",
+      "mean_price": 2845.48,
+      "std_price": 1713.71,
+      "min_price": 1443.0,
+      "max_price": 13127.0,
+      "mean_duration_hours": 2.79,
+      "sample_count": 348
+    },
+    {
+      "airline": "SpiceJet",
+      "class": "Economy",
+      "mean_price": 2426.31,
+      "std_price": 827.04,
+      "min_price": 1444.0,
+      "max_price": 3361.0,
+      "mean_duration_hours": 1.33,
+      "sample_count": 55
+    },
+    {
+      "airline": "Vistara",
+      "class": "Business",
+      "mean_price": 51684.62,
+      "std_price": 8975.46,
+      "min_price": 44144.0,
+      "max_price": 107597.0,
+      "mean_duration_hours": 14.56,
+      "sample_count": 1815
+    },
+    {
+      "airline": "Vistara",
+      "class": "Economy",
+      "mean_price": 7895.91,
+      "std_price": 4264.47,
+      "min_price": 4536.0,
+      "max_price": 36911.0,
+      "mean_duration_hours": 14.69,
+      "sample_count": 2117
+    }
+  ],
+  "Chennai->Delhi": [
+    {
+      "airline": "AirAsia",
+      "class": "Economy",
+      "mean_price": 3697.31,
+      "std_price": 2288.11,
+      "min_price": 2477.0,
+      "max_price": 20267.0,
+      "mean_duration_hours": 11.96,
+      "sample_count": 707
+    },
+    {
+      "airline": "Air_India",
+      "class": "Business",
+      "mean_price": 42005.11,
+      "std_price": 8169.22,
+      "min_price": 27792.0,
+      "max_price": 62789.0,
+      "mean_duration_hours": 9.73,
+      "sample_count": 721
+    },
+    {
+      "airline": "Air_India",
+      "class": "Economy",
+      "mean_price": 6540.97,
+      "std_price": 4141.09,
+      "min_price": 2271.0,
+      "max_price": 32911.0,
+      "mean_duration_hours": 14.06,
+      "sample_count": 1124
+    },
+    {
+      "airline": "GO_FIRST",
+      "class": "Economy",
+      "mean_price": 4994.12,
+      "std_price": 1094.14,
+      "min_price": 2712.0,
+      "max_price": 7859.0,
+      "mean_duration_hours": 10.12,
+      "sample_count": 576
+    },
+    {
+      "airline": "Indigo",
+      "class": "Economy",
+      "mean_price": 5250.7,
+      "std_price": 2783.31,
+      "min_price": 2051.0,
+      "max_price": 24047.0,
+      "mean_duration_hours": 6.53,
+      "sample_count": 1747
+    },
+    {
+      "airline": "SpiceJet",
+      "class": "Economy",
+      "mean_price": 5875.29,
+      "std_price": 2819.15,
+      "min_price": 2516.0,
+      "max_price": 20058.0,
+      "mean_duration_hours": 15.77,
+      "sample_count": 763
+    },
+    {
+      "airline": "Vistara",
+      "class": "Business",
+      "mean_price": 56202.6,
+      "std_price": 11158.09,
+      "min_price": 27792.0,
+      "max_price": 103683.0,
+      "mean_duration_hours": 11.38,
+      "sample_count": 2002
+    },
+    {
+      "airline": "Vistara",
+      "class": "Economy",
+      "mean_price": 7651.8,
+      "std_price": 3624.53,
+      "min_price": 2051.0,
+      "max_price": 34968.0,
+      "mean_duration_hours": 12.01,
+      "sample_count": 2143
+    }
+  ],
+  "Chennai->Hyderabad": [
+    {
+      "airline": "AirAsia",
+      "class": "Economy",
+      "mean_price": 2053.18,
+      "std_price": 1449.76,
+      "min_price": 1105.0,
+      "max_price": 11867.0,
+      "mean_duration_hours": 6.8,
+      "sample_count": 126
+    },
+    {
+      "airline": "Air_India",
+      "class": "Business",
+      "mean_price": 50870.05,
+      "std_price": 8757.55,
+      "min_price": 15000.0,
+      "max_price": 80342.0,
+      "mean_duration_hours": 14.03,
+      "sample_count": 645
+    },
+    {
+      "airline": "Air_India",
+      "class": "Economy",
+      "mean_price": 7516.31,
+      "std_price": 5159.75,
+      "min_price": 1526.0,
+      "max_price": 26148.0,
+      "mean_duration_hours": 15.16,
+      "sample_count": 787
+    },
+    {
+      "airline": "GO_FIRST",
+      "class": "Economy",
+      "mean_price": 1613.11,
+      "std_price": 1194.23,
+      "min_price": 1105.0,
+      "max_price": 4933.0,
+      "mean_duration_hours": 1.38,
+      "sample_count": 38
+    },
+    {
+      "airline": "Indigo",
+      "class": "Economy",
+      "mean_price": 3641.29,
+      "std_price": 2395.33,
+      "min_price": 1105.0,
+      "max_price": 11972.0,
+      "mean_duration_hours": 5.31,
+      "sample_count": 1404
+    },
+    {
+      "airline": "SpiceJet",
+      "class": "Economy",
+      "mean_price": 3291.73,
+      "std_price": 1436.25,
+      "min_price": 1106.0,
+      "max_price": 7615.0,
+      "mean_duration_hours": 7.03,
+      "sample_count": 51
+    },
+    {
+      "airline": "Vistara",
+      "class": "Business",
+      "mean_price": 51867.36,
+      "std_price": 12140.06,
+      "min_price": 41064.0,
+      "max_price": 92752.0,
+      "mean_duration_hours": 16.65,
+      "sample_count": 1447
+    },
+    {
+      "airline": "Vistara",
+      "class": "Economy",
+      "mean_price": 7721.58,
+      "std_price": 3714.85,
+      "min_price": 3810.0,
+      "max_price": 22998.0,
+      "mean_duration_hours": 16.5,
+      "sample_count": 1605
+    }
+  ],
+  "Chennai->Kolkata": [
+    {
+      "airline": "AirAsia",
+      "class": "Economy",
+      "mean_price": 3682.34,
+      "std_price": 2133.27,
+      "min_price": 2359.0,
+      "max_price": 21364.0,
+      "mean_duration_hours": 6.31,
+      "sample_count": 307
+    },
+    {
+      "airline": "Air_India",
+      "class": "Business",
+      "mean_price": 54365.96,
+      "std_price": 9681.84,
+      "min_price": 20000.0,
+      "max_price": 84374.0,
+      "mean_duration_hours": 17.14,
+      "sample_count": 846
+    },
+    {
+      "airline": "Air_India",
+      "class": "Economy",
+      "mean_price": 8052.79,
+      "std_price": 5314.64,
+      "min_price": 2360.0,
+      "max_price": 42349.0,
+      "mean_duration_hours": 18.47,
+      "sample_count": 1023
+    },
+    {
+      "airline": "GO_FIRST",
+      "class": "Economy",
+      "mean_price": 7926.34,
+      "std_price": 2697.21,
+      "min_price": 2998.0,
+      "max_price": 12779.0,
+      "mean_duration_hours": 9.93,
+      "sample_count": 172
+    },
+    {
+      "airline": "Indigo",
+      "class": "Economy",
+      "mean_price": 5667.82,
+      "std_price": 3140.69,
+      "min_price": 2359.0,
+      "max_price": 23575.0,
+      "mean_duration_hours": 7.18,
+      "sample_count": 1541
+    },
+    {
+      "airline": "SpiceJet",
+      "class": "Economy",
+      "mean_price": 4672.56,
+      "std_price": 1810.04,
+      "min_price": 2359.0,
+      "max_price": 20478.0,
+      "mean_duration_hours": 9.95,
+      "sample_count": 145
+    },
+    {
+      "airline": "Vistara",
+      "class": "Business",
+      "mean_price": 58863.61,
+      "std_price": 8281.06,
+      "min_price": 54896.0,
+      "max_price": 104624.0,
+      "mean_duration_hours": 17.15,
+      "sample_count": 1286
+    },
+    {
+      "airline": "Vistara",
+      "class": "Economy",
+      "mean_price": 9902.88,
+      "std_price": 4364.79,
+      "min_price": 5660.0,
+      "max_price": 32658.0,
+      "mean_duration_hours": 17.89,
+      "sample_count": 1663
+    }
+  ],
+  "Chennai->Mumbai": [
+    {
+      "airline": "AirAsia",
+      "class": "Economy",
+      "mean_price": 2691.1,
+      "std_price": 1822.85,
+      "min_price": 1830.0,
+      "max_price": 11783.0,
+      "mean_duration_hours": 8.75,
+      "sample_count": 220
+    },
+    {
+      "airline": "Air_India",
+      "class": "Business",
+      "mean_price": 48780.45,
+      "std_price": 9422.51,
+      "min_price": 23424.0,
+      "max_price": 86491.0,
+      "mean_duration_hours": 14.9,
+      "sample_count": 1209
+    },
+    {
+      "airline": "Air_India",
+      "class": "Economy",
+      "mean_price": 7064.8,
+      "std_price": 4107.04,
+      "min_price": 1830.0,
+      "max_price": 34982.0,
+      "mean_duration_hours": 18.06,
+      "sample_count": 1919
+    },
+    {
+      "airline": "GO_FIRST",
+      "class": "Economy",
+      "mean_price": 4205.2,
+      "std_price": 1762.88,
+      "min_price": 3000.0,
+      "max_price": 11104.0,
+      "mean_duration_hours": 6.08,
+      "sample_count": 121
+    },
+    {
+      "airline": "Indigo",
+      "class": "Economy",
+      "mean_price": 5014.56,
+      "std_price": 3235.78,
+      "min_price": 1830.0,
+      "max_price": 23312.0,
+      "mean_duration_hours": 6.06,
+      "sample_count": 1706
+    },
+    {
+      "airline": "SpiceJet",
+      "class": "Economy",
+      "mean_price": 5474.07,
+      "std_price": 2773.38,
+      "min_price": 2955.0,
+      "max_price": 16908.0,
+      "mean_duration_hours": 7.27,
+      "sample_count": 205
+    },
+    {
+      "airline": "Vistara",
+      "class": "Business",
+      "mean_price": 61109.32,
+      "std_price": 16294.0,
+      "min_price": 23838.0,
+      "max_price": 114704.0,
+      "mean_duration_hours": 11.77,
+      "sample_count": 1842
+    },
+    {
+      "airline": "Vistara",
+      "class": "Economy",
+      "mean_price": 7898.55,
+      "std_price": 4652.25,
+      "min_price": 2840.0,
+      "max_price": 37646.0,
+      "mean_duration_hours": 12.63,
+      "sample_count": 2116
+    }
+  ],
+  "Delhi->Bangalore": [
+    {
+      "airline": "AirAsia",
+      "class": "Economy",
+      "mean_price": 5316.4,
+      "std_price": 3481.74,
+      "min_price": 3090.0,
+      "max_price": 31917.0,
+      "mean_duration_hours": 8.46,
+      "sample_count": 1549
+    },
+    {
+      "airline": "Air_India",
+      "class": "Business",
+      "mean_price": 41222.32,
+      "std_price": 6345.71,
+      "min_price": 32859.0,
+      "max_price": 64094.0,
+      "mean_duration_hours": 14.82,
+      "sample_count": 1212
+    },
+    {
+      "airline": "Air_India",
+      "class": "Economy",
+      "mean_price": 6929.02,
+      "std_price": 3959.44,
+      "min_price": 3610.0,
+      "max_price": 28005.0,
+      "mean_duration_hours": 15.25,
+      "sample_count": 1848
+    },
+    {
+      "airline": "GO_FIRST",
+      "class": "Economy",
+      "mean_price": 5660.52,
+      "std_price": 2817.28,
+      "min_price": 3568.0,
+      "max_price": 30222.0,
+      "mean_duration_hours": 7.17,
+      "sample_count": 1489
+    },
+    {
+      "airline": "Indigo",
+      "class": "Economy",
+      "mean_price": 6084.36,
+      "std_price": 3376.49,
+      "min_price": 3127.0,
+      "max_price": 24120.0,
+      "mean_duration_hours": 6.57,
+      "sample_count": 1919
+    },
+    {
+      "airline": "SpiceJet",
+      "class": "Economy",
+      "mean_price": 6679.89,
+      "std_price": 3089.99,
+      "min_price": 3133.0,
+      "max_price": 24489.0,
+      "mean_duration_hours": 13.07,
+      "sample_count": 616
+    },
+    {
+      "airline": "Vistara",
+      "class": "Business",
+      "mean_price": 51931.71,
+      "std_price": 9690.71,
+      "min_price": 32859.0,
+      "max_price": 85353.0,
+      "mean_duration_hours": 9.82,
+      "sample_count": 2656
+    },
+    {
+      "airline": "Vistara",
+      "class": "Economy",
+      "mean_price": 6385.01,
+      "std_price": 3484.83,
+      "min_price": 3229.0,
+      "max_price": 30840.0,
+      "mean_duration_hours": 10.43,
+      "sample_count": 2723
+    }
+  ],
+  "Delhi->Chennai": [
+    {
+      "airline": "AirAsia",
+      "class": "Economy",
+      "mean_price": 3393.98,
+      "std_price": 2455.49,
+      "min_price": 1998.0,
+      "max_price": 22546.0,
+      "mean_duration_hours": 11.1,
+      "sample_count": 704
+    },
+    {
+      "airline": "Air_India",
+      "class": "Business",
+      "mean_price": 43908.95,
+      "std_price": 8182.87,
+      "min_price": 27864.0,
+      "max_price": 79741.0,
+      "mean_duration_hours": 16.57,
+      "sample_count": 1171
+    },
+    {
+      "airline": "Air_India",
+      "class": "Economy",
+      "mean_price": 6540.42,
+      "std_price": 4484.25,
+      "min_price": 2343.0,
+      "max_price": 35145.0,
+      "mean_duration_hours": 16.89,
+      "sample_count": 1405
+    },
+    {
+      "airline": "GO_FIRST",
+      "class": "Economy",
+      "mean_price": 5085.22,
+      "std_price": 1131.9,
+      "min_price": 2968.0,
+      "max_price": 7933.0,
+      "mean_duration_hours": 9.44,
+      "sample_count": 809
+    },
+    {
+      "airline": "Indigo",
+      "class": "Economy",
+      "mean_price": 5164.76,
+      "std_price": 2547.79,
+      "min_price": 2050.0,
+      "max_price": 19626.0,
+      "mean_duration_hours": 6.67,
+      "sample_count": 1789
+    },
+    {
+      "airline": "SpiceJet",
+      "class": "Economy",
+      "mean_price": 6002.37,
+      "std_price": 2981.0,
+      "min_price": 2637.0,
+      "max_price": 25454.0,
+      "mean_duration_hours": 15.15,
+      "sample_count": 758
+    },
+    {
+      "airline": "Vistara",
+      "class": "Business",
+      "mean_price": 56927.21,
+      "std_price": 12491.29,
+      "min_price": 27864.0,
+      "max_price": 104466.0,
+      "mean_duration_hours": 12.14,
+      "sample_count": 1943
+    },
+    {
+      "airline": "Vistara",
+      "class": "Economy",
+      "mean_price": 7859.25,
+      "std_price": 3965.29,
+      "min_price": 2049.0,
+      "max_price": 27270.0,
+      "mean_duration_hours": 12.93,
+      "sample_count": 2201
+    }
+  ],
+  "Delhi->Hyderabad": [
+    {
+      "airline": "AirAsia",
+      "class": "Economy",
+      "mean_price": 4733.34,
+      "std_price": 4176.85,
+      "min_price": 2050.0,
+      "max_price": 30760.0,
+      "mean_duration_hours": 9.19,
+      "sample_count": 728
+    },
+    {
+      "airline": "Air_India",
+      "class": "Business",
+      "mean_price": 39139.17,
+      "std_price": 7915.56,
+      "min_price": 23944.0,
+      "max_price": 60590.0,
+      "mean_duration_hours": 14.98,
+      "sample_count": 1087
+    },
+    {
+      "airline": "Air_India",
+      "class": "Economy",
+      "mean_price": 6470.29,
+      "std_price": 3613.13,
+      "min_price": 2098.0,
+      "max_price": 25380.0,
+      "mean_duration_hours": 16.34,
+      "sample_count": 1796
+    },
+    {
+      "airline": "GO_FIRST",
+      "class": "Economy",
+      "mean_price": 5394.22,
+      "std_price": 2776.51,
+      "min_price": 2098.0,
+      "max_price": 24121.0,
+      "mean_duration_hours": 7.7,
+      "sample_count": 497
+    },
+    {
+      "airline": "Indigo",
+      "class": "Economy",
+      "mean_price": 4820.53,
+      "std_price": 2855.89,
+      "min_price": 2098.0,
+      "max_price": 20534.0,
+      "mean_duration_hours": 5.59,
+      "sample_count": 1036
+    },
+    {
+      "airline": "SpiceJet",
+      "class": "Economy",
+      "mean_price": 5831.11,
+      "std_price": 3014.71,
+      "min_price": 2100.0,
+      "max_price": 19527.0,
+      "mean_duration_hours": 5.4,
+      "sample_count": 152
+    },
+    {
+      "airline": "Vistara",
+      "class": "Business",
+      "mean_price": 47939.84,
+      "std_price": 11856.13,
+      "min_price": 24056.0,
+      "max_price": 114507.0,
+      "mean_duration_hours": 12.64,
+      "sample_count": 1660
+    },
+    {
+      "airline": "Vistara",
+      "class": "Economy",
+      "mean_price": 6772.03,
+      "std_price": 2699.24,
+      "min_price": 2022.0,
+      "max_price": 29055.0,
+      "mean_duration_hours": 13.93,
+      "sample_count": 2372
+    }
+  ],
+  "Delhi->Kolkata": [
+    {
+      "airline": "AirAsia",
+      "class": "Economy",
+      "mean_price": 4160.48,
+      "std_price": 2316.44,
+      "min_price": 2480.0,
+      "max_price": 21416.0,
+      "mean_duration_hours": 9.52,
+      "sample_count": 774
+    },
+    {
+      "airline": "Air_India",
+      "class": "Business",
+      "mean_price": 45732.96,
+      "std_price": 9990.9,
+      "min_price": 27976.0,
+      "max_price": 83460.0,
+      "mean_duration_hours": 14.87,
+      "sample_count": 1337
+    },
+    {
+      "airline": "Air_India",
+      "class": "Economy",
+      "mean_price": 7431.61,
+      "std_price": 3886.74,
+      "min_price": 2482.0,
+      "max_price": 32999.0,
+      "mean_duration_hours": 16.96,
+      "sample_count": 2200
+    },
+    {
+      "airline": "GO_FIRST",
+      "class": "Economy",
+      "mean_price": 6363.19,
+      "std_price": 1883.82,
+      "min_price": 3087.0,
+      "max_price": 21627.0,
+      "mean_duration_hours": 10.38,
+      "sample_count": 1279
+    },
+    {
+      "airline": "Indigo",
+      "class": "Economy",
+      "mean_price": 6002.35,
+      "std_price": 3352.78,
+      "min_price": 2482.0,
+      "max_price": 30735.0,
+      "mean_duration_hours": 5.12,
+      "sample_count": 1877
+    },
+    {
+      "airline": "SpiceJet",
+      "class": "Economy",
+      "mean_price": 7032.55,
+      "std_price": 3764.79,
+      "min_price": 3884.0,
+      "max_price": 27769.0,
+      "mean_duration_hours": 11.88,
+      "sample_count": 494
+    },
+    {
+      "airline": "Vistara",
+      "class": "Business",
+      "mean_price": 63469.77,
+      "std_price": 14671.93,
+      "min_price": 27976.0,
+      "max_price": 117307.0,
+      "mean_duration_hours": 14.57,
+      "sample_count": 1943
+    },
+    {
+      "airline": "Vistara",
+      "class": "Economy",
+      "mean_price": 9125.15,
+      "std_price": 4020.68,
+      "min_price": 4000.0,
+      "max_price": 30210.0,
+      "mean_duration_hours": 14.95,
+      "sample_count": 2030
+    }
+  ],
+  "Delhi->Mumbai": [
+    {
+      "airline": "AirAsia",
+      "class": "Economy",
+      "mean_price": 3981.19,
+      "std_price": 2758.9,
+      "min_price": 2409.0,
+      "max_price": 29501.0,
+      "mean_duration_hours": 10.32,
+      "sample_count": 632
+    },
+    {
+      "airline": "Air_India",
+      "class": "Business",
+      "mean_price": 41907.87,
+      "std_price": 12118.09,
+      "min_price": 22152.0,
+      "max_price": 68038.0,
+      "mean_duration_hours": 14.01,
+      "sample_count": 2395
+    },
+    {
+      "airline": "Air_India",
+      "class": "Economy",
+      "mean_price": 6996.98,
+      "std_price": 4448.76,
+      "min_price": 2476.0,
+      "max_price": 31260.0,
+      "mean_duration_hours": 13.35,
+      "sample_count": 2612
+    },
+    {
+      "airline": "GO_FIRST",
+      "class": "Economy",
+      "mean_price": 5762.21,
+      "std_price": 3268.43,
+      "min_price": 2410.0,
+      "max_price": 23685.0,
+      "mean_duration_hours": 6.6,
+      "sample_count": 1650
+    },
+    {
+      "airline": "Indigo",
+      "class": "Economy",
+      "mean_price": 4473.74,
+      "std_price": 2728.57,
+      "min_price": 2381.0,
+      "max_price": 15720.0,
+      "mean_duration_hours": 5.0,
+      "sample_count": 1656
+    },
+    {
+      "airline": "SpiceJet",
+      "class": "Economy",
+      "mean_price": 4628.25,
+      "std_price": 2595.08,
+      "min_price": 2281.0,
+      "max_price": 19464.0,
+      "mean_duration_hours": 8.17,
+      "sample_count": 504
+    },
+    {
+      "airline": "Vistara",
+      "class": "Business",
+      "mean_price": 46384.87,
+      "std_price": 11349.76,
+      "min_price": 22152.0,
+      "max_price": 95657.0,
+      "mean_duration_hours": 10.22,
+      "sample_count": 2912
+    },
+    {
+      "airline": "Vistara",
+      "class": "Economy",
+      "mean_price": 6983.66,
+      "std_price": 3714.07,
+      "min_price": 2476.0,
+      "max_price": 29160.0,
+      "mean_duration_hours": 10.42,
+      "sample_count": 2928
+    }
+  ],
+  "Hyderabad->Bangalore": [
+    {
+      "airline": "AirAsia",
+      "class": "Economy",
+      "mean_price": 3135.87,
+      "std_price": 1704.46,
+      "min_price": 1776.0,
+      "max_price": 12033.0,
+      "mean_duration_hours": 5.57,
+      "sample_count": 322
+    },
+    {
+      "airline": "Air_India",
+      "class": "Business",
+      "mean_price": 51507.93,
+      "std_price": 10900.58,
+      "min_price": 12114.0,
+      "max_price": 64407.0,
+      "mean_duration_hours": 14.62,
+      "sample_count": 718
+    },
+    {
+      "airline": "Air_India",
+      "class": "Economy",
+      "mean_price": 7570.21,
+      "std_price": 4147.09,
+      "min_price": 2080.0,
+      "max_price": 31963.0,
+      "mean_duration_hours": 13.21,
+      "sample_count": 952
+    },
+    {
+      "airline": "GO_FIRST",
+      "class": "Economy",
+      "mean_price": 4733.31,
+      "std_price": 2060.53,
+      "min_price": 1776.0,
+      "max_price": 13613.0,
+      "mean_duration_hours": 8.81,
+      "sample_count": 331
+    },
+    {
+      "airline": "Indigo",
+      "class": "Economy",
+      "mean_price": 3199.43,
+      "std_price": 1749.71,
+      "min_price": 1755.0,
+      "max_price": 12118.0,
+      "mean_duration_hours": 4.73,
+      "sample_count": 1159
+    },
+    {
+      "airline": "Vistara",
+      "class": "Business",
+      "mean_price": 49939.71,
+      "std_price": 11559.0,
+      "min_price": 38099.0,
+      "max_price": 97767.0,
+      "mean_duration_hours": 14.76,
+      "sample_count": 1972
+    },
+    {
+      "airline": "Vistara",
+      "class": "Economy",
+      "mean_price": 7793.95,
+      "std_price": 3599.51,
+      "min_price": 1776.0,
+      "max_price": 32751.0,
+      "mean_duration_hours": 13.59,
+      "sample_count": 2400
+    }
+  ],
+  "Hyderabad->Chennai": [
+    {
+      "airline": "AirAsia",
+      "class": "Economy",
+      "mean_price": 2606.02,
+      "std_price": 1640.78,
+      "min_price": 1544.0,
+      "max_price": 10018.0,
+      "mean_duration_hours": 8.32,
+      "sample_count": 148
+    },
+    {
+      "airline": "Air_India",
+      "class": "Business",
+      "mean_price": 49649.86,
+      "std_price": 6213.49,
+      "min_price": 15250.0,
+      "max_price": 80762.0,
+      "mean_duration_hours": 15.93,
+      "sample_count": 773
+    },
+    {
+      "airline": "Air_India",
+      "class": "Economy",
+      "mean_price": 7203.29,
+      "std_price": 4808.13,
+      "min_price": 1776.0,
+      "max_price": 29128.0,
+      "mean_duration_hours": 15.74,
+      "sample_count": 894
+    },
+    {
+      "airline": "GO_FIRST",
+      "class": "Economy",
+      "mean_price": 1942.26,
+      "std_price": 1043.57,
+      "min_price": 1543.0,
+      "max_price": 5079.0,
+      "mean_duration_hours": 1.42,
+      "sample_count": 38
+    },
+    {
+      "airline": "Indigo",
+      "class": "Economy",
+      "mean_price": 3920.81,
+      "std_price": 2425.17,
+      "min_price": 1543.0,
+      "max_price": 12223.0,
+      "mean_duration_hours": 5.38,
+      "sample_count": 1436
+    },
+    {
+      "airline": "Vistara",
+      "class": "Business",
+      "mean_price": 51912.69,
+      "std_price": 11323.41,
+      "min_price": 41314.0,
+      "max_price": 95208.0,
+      "mean_duration_hours": 16.2,
+      "sample_count": 1468
+    },
+    {
+      "airline": "Vistara",
+      "class": "Economy",
+      "mean_price": 7733.2,
+      "std_price": 3645.45,
+      "min_price": 3859.0,
+      "max_price": 24193.0,
+      "mean_duration_hours": 15.9,
+      "sample_count": 1623
+    }
+  ],
+  "Hyderabad->Delhi": [
+    {
+      "airline": "AirAsia",
+      "class": "Economy",
+      "mean_price": 3960.02,
+      "std_price": 3520.72,
+      "min_price": 2228.0,
+      "max_price": 30211.0,
+      "mean_duration_hours": 9.42,
+      "sample_count": 596
+    },
+    {
+      "airline": "Air_India",
+      "class": "Business",
+      "mean_price": 39074.97,
+      "std_price": 8220.43,
+      "min_price": 24122.0,
+      "max_price": 57141.0,
+      "mean_duration_hours": 12.69,
+      "sample_count": 957
+    },
+    {
+      "airline": "Air_India",
+      "class": "Economy",
+      "mean_price": 6654.19,
+      "std_price": 3795.71,
+      "min_price": 2276.0,
+      "max_price": 26608.0,
+      "mean_duration_hours": 13.53,
+      "sample_count": 1428
+    },
+    {
+      "airline": "GO_FIRST",
+      "class": "Economy",
+      "mean_price": 5738.41,
+      "std_price": 2383.58,
+      "min_price": 2276.0,
+      "max_price": 24981.0,
+      "mean_duration_hours": 7.78,
+      "sample_count": 649
+    },
+    {
+      "airline": "Indigo",
+      "class": "Economy",
+      "mean_price": 5169.42,
+      "std_price": 2888.95,
+      "min_price": 2276.0,
+      "max_price": 23190.0,
+      "mean_duration_hours": 5.96,
+      "sample_count": 1095
+    },
+    {
+      "airline": "SpiceJet",
+      "class": "Economy",
+      "mean_price": 5813.81,
+      "std_price": 2609.24,
+      "min_price": 2276.0,
+      "max_price": 11591.0,
+      "mean_duration_hours": 12.02,
+      "sample_count": 149
+    },
+    {
+      "airline": "Vistara",
+      "class": "Business",
+      "mean_price": 47483.84,
+      "std_price": 11238.06,
+      "min_price": 24234.0,
+      "max_price": 86203.0,
+      "mean_duration_hours": 11.15,
+      "sample_count": 1532
+    },
+    {
+      "airline": "Vistara",
+      "class": "Economy",
+      "mean_price": 6868.4,
+      "std_price": 2489.35,
+      "min_price": 2200.0,
+      "max_price": 23563.0,
+      "mean_duration_hours": 11.71,
+      "sample_count": 2100
+    }
+  ],
+  "Hyderabad->Kolkata": [
+    {
+      "airline": "AirAsia",
+      "class": "Economy",
+      "mean_price": 3269.75,
+      "std_price": 1974.81,
+      "min_price": 2056.0,
+      "max_price": 14428.0,
+      "mean_duration_hours": 7.96,
+      "sample_count": 397
+    },
+    {
+      "airline": "Air_India",
+      "class": "Business",
+      "mean_price": 48849.18,
+      "std_price": 8006.55,
+      "min_price": 20000.0,
+      "max_price": 59524.0,
+      "mean_duration_hours": 15.95,
+      "sample_count": 858
+    },
+    {
+      "airline": "Air_India",
+      "class": "Economy",
+      "mean_price": 7374.8,
+      "std_price": 3676.86,
+      "min_price": 2080.0,
+      "max_price": 33853.0,
+      "mean_duration_hours": 17.98,
+      "sample_count": 1275
+    },
+    {
+      "airline": "GO_FIRST",
+      "class": "Economy",
+      "mean_price": 5032.43,
+      "std_price": 1770.95,
+      "min_price": 2057.0,
+      "max_price": 16739.0,
+      "mean_duration_hours": 9.0,
+      "sample_count": 320
+    },
+    {
+      "airline": "Indigo",
+      "class": "Economy",
+      "mean_price": 5678.17,
+      "std_price": 2873.99,
+      "min_price": 2057.0,
+      "max_price": 25873.0,
+      "mean_duration_hours": 6.03,
+      "sample_count": 1692
+    },
+    {
+      "airline": "SpiceJet",
+      "class": "Economy",
+      "mean_price": 6773.86,
+      "std_price": 1808.73,
+      "min_price": 5292.0,
+      "max_price": 15059.0,
+      "mean_duration_hours": 12.59,
+      "sample_count": 168
+    },
+    {
+      "airline": "Vistara",
+      "class": "Business",
+      "mean_price": 56485.59,
+      "std_price": 9247.81,
+      "min_price": 48851.0,
+      "max_price": 97381.0,
+      "mean_duration_hours": 16.48,
+      "sample_count": 1519
+    },
+    {
+      "airline": "Vistara",
+      "class": "Economy",
+      "mean_price": 8844.94,
+      "std_price": 3211.97,
+      "min_price": 5810.0,
+      "max_price": 26661.0,
+      "mean_duration_hours": 15.99,
+      "sample_count": 1758
+    }
+  ],
+  "Hyderabad->Mumbai": [
+    {
+      "airline": "AirAsia",
+      "class": "Economy",
+      "mean_price": 2994.23,
+      "std_price": 1671.75,
+      "min_price": 2250.0,
+      "max_price": 14945.0,
+      "mean_duration_hours": 9.41,
+      "sample_count": 381
+    },
+    {
+      "airline": "Air_India",
+      "class": "Business",
+      "mean_price": 44073.87,
+      "std_price": 7802.03,
+      "min_price": 17738.0,
+      "max_price": 67827.0,
+      "mean_duration_hours": 12.97,
+      "sample_count": 1086
+    },
+    {
+      "airline": "Air_India",
+      "class": "Economy",
+      "mean_price": 6488.02,
+      "std_price": 2958.68,
+      "min_price": 2301.0,
+      "max_price": 25453.0,
+      "mean_duration_hours": 16.19,
+      "sample_count": 2147
+    },
+    {
+      "airline": "GO_FIRST",
+      "class": "Economy",
+      "mean_price": 4665.89,
+      "std_price": 1856.75,
+      "min_price": 3423.0,
+      "max_price": 32803.0,
+      "mean_duration_hours": 9.81,
+      "sample_count": 1166
+    },
+    {
+      "airline": "Indigo",
+      "class": "Economy",
+      "mean_price": 6081.03,
+      "std_price": 4285.45,
+      "min_price": 2301.0,
+      "max_price": 21253.0,
+      "mean_duration_hours": 4.51,
+      "sample_count": 833
+    },
+    {
+      "airline": "Vistara",
+      "class": "Business",
+      "mean_price": 56617.27,
+      "std_price": 13198.48,
+      "min_price": 17794.0,
+      "max_price": 115211.0,
+      "mean_duration_hours": 11.54,
+      "sample_count": 1987
+    },
+    {
+      "airline": "Vistara",
+      "class": "Economy",
+      "mean_price": 6556.25,
+      "std_price": 3453.71,
+      "min_price": 3096.0,
+      "max_price": 29601.0,
+      "mean_duration_hours": 12.11,
+      "sample_count": 2464
+    }
+  ],
+  "Kolkata->Bangalore": [
+    {
+      "airline": "AirAsia",
+      "class": "Economy",
+      "mean_price": 4629.04,
+      "std_price": 2210.81,
+      "min_price": 3565.0,
+      "max_price": 23494.0,
+      "mean_duration_hours": 9.47,
+      "sample_count": 898
+    },
+    {
+      "airline": "Air_India",
+      "class": "Business",
+      "mean_price": 56069.9,
+      "std_price": 10236.37,
+      "min_price": 25470.0,
+      "max_price": 69938.0,
+      "mean_duration_hours": 16.35,
+      "sample_count": 814
+    },
+    {
+      "airline": "Air_India",
+      "class": "Economy",
+      "mean_price": 9057.51,
+      "std_price": 4147.06,
+      "min_price": 3863.0,
+      "max_price": 29004.0,
+      "mean_duration_hours": 17.75,
+      "sample_count": 1145
+    },
+    {
+      "airline": "GO_FIRST",
+      "class": "Economy",
+      "mean_price": 6771.59,
+      "std_price": 2684.11,
+      "min_price": 3542.0,
+      "max_price": 25462.0,
+      "mean_duration_hours": 9.17,
+      "sample_count": 801
+    },
+    {
+      "airline": "Indigo",
+      "class": "Economy",
+      "mean_price": 5846.43,
+      "std_price": 2586.55,
+      "min_price": 3465.0,
+      "max_price": 26912.0,
+      "mean_duration_hours": 7.67,
+      "sample_count": 1487
+    },
+    {
+      "airline": "SpiceJet",
+      "class": "Economy",
+      "mean_price": 5885.35,
+      "std_price": 2108.51,
+      "min_price": 3863.0,
+      "max_price": 21820.0,
+      "mean_duration_hours": 12.34,
+      "sample_count": 275
+    },
+    {
+      "airline": "Vistara",
+      "class": "Business",
+      "mean_price": 59685.61,
+      "std_price": 8292.09,
+      "min_price": 52287.0,
+      "max_price": 105638.0,
+      "mean_duration_hours": 16.61,
+      "sample_count": 2116
+    },
+    {
+      "airline": "Vistara",
+      "class": "Economy",
+      "mean_price": 9285.61,
+      "std_price": 3364.94,
+      "min_price": 6195.0,
+      "max_price": 31899.0,
+      "mean_duration_hours": 15.76,
+      "sample_count": 2288
+    }
+  ],
+  "Kolkata->Chennai": [
+    {
+      "airline": "AirAsia",
+      "class": "Economy",
+      "mean_price": 4910.56,
+      "std_price": 1557.85,
+      "min_price": 2966.0,
+      "max_price": 13014.0,
+      "mean_duration_hours": 6.79,
+      "sample_count": 304
+    },
+    {
+      "airline": "Air_India",
+      "class": "Business",
+      "mean_price": 54896.04,
+      "std_price": 9472.36,
+      "min_price": 20606.0,
+      "max_price": 80756.0,
+      "mean_duration_hours": 16.27,
+      "sample_count": 912
+    },
+    {
+      "airline": "Air_India",
+      "class": "Economy",
+      "mean_price": 8678.87,
+      "std_price": 4874.42,
+      "min_price": 2966.0,
+      "max_price": 31479.0,
+      "mean_duration_hours": 17.13,
+      "sample_count": 1184
+    },
+    {
+      "airline": "GO_FIRST",
+      "class": "Economy",
+      "mean_price": 9368.88,
+      "std_price": 3310.32,
+      "min_price": 6985.0,
+      "max_price": 15540.0,
+      "mean_duration_hours": 11.61,
+      "sample_count": 123
+    },
+    {
+      "airline": "Indigo",
+      "class": "Economy",
+      "mean_price": 5626.15,
+      "std_price": 2984.57,
+      "min_price": 2966.0,
+      "max_price": 24812.0,
+      "mean_duration_hours": 7.28,
+      "sample_count": 1155
+    },
+    {
+      "airline": "SpiceJet",
+      "class": "Economy",
+      "mean_price": 5811.94,
+      "std_price": 2284.68,
+      "min_price": 2966.0,
+      "max_price": 19195.0,
+      "mean_duration_hours": 11.38,
+      "sample_count": 175
+    },
+    {
+      "airline": "Vistara",
+      "class": "Business",
+      "mean_price": 57689.29,
+      "std_price": 5469.33,
+      "min_price": 55502.0,
+      "max_price": 95183.0,
+      "mean_duration_hours": 16.93,
+      "sample_count": 1235
+    },
+    {
+      "airline": "Vistara",
+      "class": "Economy",
+      "mean_price": 10009.38,
+      "std_price": 4578.73,
+      "min_price": 5660.0,
+      "max_price": 28959.0,
+      "mean_duration_hours": 18.14,
+      "sample_count": 1565
+    }
+  ],
+  "Kolkata->Delhi": [
+    {
+      "airline": "AirAsia",
+      "class": "Economy",
+      "mean_price": 4378.33,
+      "std_price": 2904.53,
+      "min_price": 3014.0,
+      "max_price": 26360.0,
+      "mean_duration_hours": 10.75,
+      "sample_count": 827
+    },
+    {
+      "airline": "Air_India",
+      "class": "Business",
+      "mean_price": 46276.11,
+      "std_price": 10134.6,
+      "min_price": 28510.0,
+      "max_price": 77076.0,
+      "mean_duration_hours": 15.19,
+      "sample_count": 1227
+    },
+    {
+      "airline": "Air_India",
+      "class": "Economy",
+      "mean_price": 7657.22,
+      "std_price": 4044.91,
+      "min_price": 3016.0,
+      "max_price": 30744.0,
+      "mean_duration_hours": 14.61,
+      "sample_count": 1810
+    },
+    {
+      "airline": "GO_FIRST",
+      "class": "Economy",
+      "mean_price": 6730.83,
+      "std_price": 2113.47,
+      "min_price": 3028.0,
+      "max_price": 17777.0,
+      "mean_duration_hours": 9.72,
+      "sample_count": 1154
+    },
+    {
+      "airline": "Indigo",
+      "class": "Economy",
+      "mean_price": 6136.12,
+      "std_price": 2847.71,
+      "min_price": 2994.0,
+      "max_price": 31952.0,
+      "mean_duration_hours": 5.66,
+      "sample_count": 1865
+    },
+    {
+      "airline": "SpiceJet",
+      "class": "Economy",
+      "mean_price": 6920.79,
+      "std_price": 2832.9,
+      "min_price": 3999.0,
+      "max_price": 22327.0,
+      "mean_duration_hours": 12.37,
+      "sample_count": 441
+    },
+    {
+      "airline": "Vistara",
+      "class": "Business",
+      "mean_price": 62403.94,
+      "std_price": 16754.66,
+      "min_price": 28510.0,
+      "max_price": 123071.0,
+      "mean_duration_hours": 12.04,
+      "sample_count": 1463
+    },
+    {
+      "airline": "Vistara",
+      "class": "Economy",
+      "mean_price": 9441.39,
+      "std_price": 4358.58,
+      "min_price": 4001.0,
+      "max_price": 34944.0,
+      "mean_duration_hours": 13.44,
+      "sample_count": 1719
+    }
+  ],
+  "Kolkata->Hyderabad": [
+    {
+      "airline": "AirAsia",
+      "class": "Economy",
+      "mean_price": 4852.23,
+      "std_price": 1350.73,
+      "min_price": 2436.0,
+      "max_price": 12212.0,
+      "mean_duration_hours": 9.23,
+      "sample_count": 298
+    },
+    {
+      "airline": "Air_India",
+      "class": "Business",
+      "mean_price": 49589.83,
+      "std_price": 8932.78,
+      "min_price": 20356.0,
+      "max_price": 75382.0,
+      "mean_duration_hours": 15.8,
+      "sample_count": 758
+    },
+    {
+      "airline": "Air_India",
+      "class": "Economy",
+      "mean_price": 7876.97,
+      "std_price": 3465.93,
+      "min_price": 2436.0,
+      "max_price": 22292.0,
+      "mean_duration_hours": 17.54,
+      "sample_count": 1296
+    },
+    {
+      "airline": "GO_FIRST",
+      "class": "Economy",
+      "mean_price": 5494.48,
+      "std_price": 1740.82,
+      "min_price": 2437.0,
+      "max_price": 14627.0,
+      "mean_duration_hours": 8.64,
+      "sample_count": 366
+    },
+    {
+      "airline": "Indigo",
+      "class": "Economy",
+      "mean_price": 7083.61,
+      "std_price": 3849.49,
+      "min_price": 2436.0,
+      "max_price": 21924.0,
+      "mean_duration_hours": 6.38,
+      "sample_count": 1684
+    },
+    {
+      "airline": "SpiceJet",
+      "class": "Economy",
+      "mean_price": 7250.05,
+      "std_price": 1653.29,
+      "min_price": 5227.0,
+      "max_price": 16254.0,
+      "mean_duration_hours": 10.46,
+      "sample_count": 149
+    },
+    {
+      "airline": "Vistara",
+      "class": "Business",
+      "mean_price": 57193.37,
+      "std_price": 12079.02,
+      "min_price": 49207.0,
+      "max_price": 114705.0,
+      "mean_duration_hours": 16.71,
+      "sample_count": 1584
+    },
+    {
+      "airline": "Vistara",
+      "class": "Economy",
+      "mean_price": 8471.99,
+      "std_price": 3298.13,
+      "min_price": 5632.0,
+      "max_price": 25494.0,
+      "mean_duration_hours": 17.04,
+      "sample_count": 1762
+    }
+  ],
+  "Kolkata->Mumbai": [
+    {
+      "airline": "AirAsia",
+      "class": "Economy",
+      "mean_price": 4039.74,
+      "std_price": 1730.91,
+      "min_price": 3379.0,
+      "max_price": 21087.0,
+      "mean_duration_hours": 11.2,
+      "sample_count": 502
+    },
+    {
+      "airline": "Air_India",
+      "class": "Business",
+      "mean_price": 48512.36,
+      "std_price": 5821.89,
+      "min_price": 31838.0,
+      "max_price": 71540.0,
+      "mean_duration_hours": 13.61,
+      "sample_count": 1279
+    },
+    {
+      "airline": "Air_India",
+      "class": "Economy",
+      "mean_price": 8132.63,
+      "std_price": 3580.38,
+      "min_price": 3381.0,
+      "max_price": 22659.0,
+      "mean_duration_hours": 16.73,
+      "sample_count": 1975
+    },
+    {
+      "airline": "GO_FIRST",
+      "class": "Economy",
+      "mean_price": 6525.82,
+      "std_price": 1926.38,
+      "min_price": 4499.0,
+      "max_price": 25740.0,
+      "mean_duration_hours": 9.65,
+      "sample_count": 1146
+    },
+    {
+      "airline": "Indigo",
+      "class": "Economy",
+      "mean_price": 6194.18,
+      "std_price": 2733.86,
+      "min_price": 3381.0,
+      "max_price": 27752.0,
+      "mean_duration_hours": 6.91,
+      "sample_count": 1105
+    },
+    {
+      "airline": "SpiceJet",
+      "class": "Economy",
+      "mean_price": 7248.83,
+      "std_price": 2480.08,
+      "min_price": 4499.0,
+      "max_price": 20875.0,
+      "mean_duration_hours": 16.18,
+      "sample_count": 907
+    },
+    {
+      "airline": "Vistara",
+      "class": "Business",
+      "mean_price": 62888.33,
+      "std_price": 11943.7,
+      "min_price": 31982.0,
+      "max_price": 110936.0,
+      "mean_duration_hours": 12.84,
+      "sample_count": 2085
+    },
+    {
+      "airline": "Vistara",
+      "class": "Economy",
+      "mean_price": 8517.57,
+      "std_price": 3727.51,
+      "min_price": 4499.0,
+      "max_price": 31112.0,
+      "mean_duration_hours": 13.28,
+      "sample_count": 2468
+    }
+  ],
+  "Mumbai->Bangalore": [
+    {
+      "airline": "AirAsia",
+      "class": "Economy",
+      "mean_price": 3580.89,
+      "std_price": 2809.59,
+      "min_price": 2074.0,
+      "max_price": 24318.0,
+      "mean_duration_hours": 9.2,
+      "sample_count": 530
+    },
+    {
+      "airline": "Air_India",
+      "class": "Business",
+      "mean_price": 51925.7,
+      "std_price": 9225.89,
+      "min_price": 20684.0,
+      "max_price": 76997.0,
+      "mean_duration_hours": 15.03,
+      "sample_count": 1458
+    },
+    {
+      "airline": "Air_India",
+      "class": "Economy",
+      "mean_price": 7689.14,
+      "std_price": 3160.13,
+      "min_price": 2132.0,
+      "max_price": 34188.0,
+      "mean_duration_hours": 16.98,
+      "sample_count": 2174
+    },
+    {
+      "airline": "GO_FIRST",
+      "class": "Economy",
+      "mean_price": 5424.5,
+      "std_price": 2383.26,
+      "min_price": 2124.0,
+      "max_price": 26891.0,
+      "mean_duration_hours": 8.5,
+      "sample_count": 1383
+    },
+    {
+      "airline": "Indigo",
+      "class": "Economy",
+      "mean_price": 4635.51,
+      "std_price": 3048.6,
+      "min_price": 2124.0,
+      "max_price": 18189.0,
+      "mean_duration_hours": 5.18,
+      "sample_count": 1859
+    },
+    {
+      "airline": "SpiceJet",
+      "class": "Economy",
+      "mean_price": 5595.71,
+      "std_price": 3186.86,
+      "min_price": 2126.0,
+      "max_price": 17179.0,
+      "mean_duration_hours": 14.94,
+      "sample_count": 142
+    },
+    {
+      "airline": "Vistara",
+      "class": "Business",
+      "mean_price": 61209.57,
+      "std_price": 17446.76,
+      "min_price": 20684.0,
+      "max_price": 114523.0,
+      "mean_duration_hours": 10.95,
+      "sample_count": 2721
+    },
+    {
+      "airline": "Vistara",
+      "class": "Economy",
+      "mean_price": 7820.2,
+      "std_price": 3736.27,
+      "min_price": 2074.0,
+      "max_price": 26208.0,
+      "mean_duration_hours": 12.47,
+      "sample_count": 2618
+    }
+  ],
+  "Mumbai->Chennai": [
+    {
+      "airline": "AirAsia",
+      "class": "Economy",
+      "mean_price": 2909.36,
+      "std_price": 2477.43,
+      "min_price": 1890.0,
+      "max_price": 23358.0,
+      "mean_duration_hours": 9.59,
+      "sample_count": 222
+    },
+    {
+      "airline": "Air_India",
+      "class": "Business",
+      "mean_price": 48040.25,
+      "std_price": 8766.0,
+      "min_price": 23484.0,
+      "max_price": 90970.0,
+      "mean_duration_hours": 14.36,
+      "sample_count": 1185
+    },
+    {
+      "airline": "Air_India",
+      "class": "Economy",
+      "mean_price": 6958.07,
+      "std_price": 3979.07,
+      "min_price": 1890.0,
+      "max_price": 26838.0,
+      "mean_duration_hours": 17.29,
+      "sample_count": 2007
+    },
+    {
+      "airline": "GO_FIRST",
+      "class": "Economy",
+      "mean_price": 4302.35,
+      "std_price": 1307.27,
+      "min_price": 3000.0,
+      "max_price": 6600.0,
+      "mean_duration_hours": 4.25,
+      "sample_count": 149
+    },
+    {
+      "airline": "Indigo",
+      "class": "Economy",
+      "mean_price": 5183.28,
+      "std_price": 3399.06,
+      "min_price": 1890.0,
+      "max_price": 20381.0,
+      "mean_duration_hours": 5.37,
+      "sample_count": 1787
+    },
+    {
+      "airline": "SpiceJet",
+      "class": "Economy",
+      "mean_price": 5127.34,
+      "std_price": 2788.11,
+      "min_price": 3000.0,
+      "max_price": 16549.0,
+      "mean_duration_hours": 5.05,
+      "sample_count": 166
+    },
+    {
+      "airline": "Vistara",
+      "class": "Business",
+      "mean_price": 59872.63,
+      "std_price": 13664.32,
+      "min_price": 23898.0,
+      "max_price": 111964.0,
+      "mean_duration_hours": 13.61,
+      "sample_count": 2178
+    },
+    {
+      "airline": "Vistara",
+      "class": "Economy",
+      "mean_price": 7424.02,
+      "std_price": 4481.72,
+      "min_price": 2900.0,
+      "max_price": 33401.0,
+      "mean_duration_hours": 13.86,
+      "sample_count": 2436
+    }
+  ],
+  "Mumbai->Delhi": [
+    {
+      "airline": "AirAsia",
+      "class": "Economy",
+      "mean_price": 4025.71,
+      "std_price": 3496.79,
+      "min_price": 2336.0,
+      "max_price": 31799.0,
+      "mean_duration_hours": 9.15,
+      "sample_count": 745
+    },
+    {
+      "airline": "Air_India",
+      "class": "Business",
+      "mean_price": 40804.09,
+      "std_price": 12383.82,
+      "min_price": 22140.0,
+      "max_price": 79954.0,
+      "mean_duration_hours": 13.44,
+      "sample_count": 2116
+    },
+    {
+      "airline": "Air_India",
+      "class": "Economy",
+      "mean_price": 6786.98,
+      "std_price": 4064.7,
+      "min_price": 2464.0,
+      "max_price": 32119.0,
+      "mean_duration_hours": 13.13,
+      "sample_count": 2534
+    },
+    {
+      "airline": "GO_FIRST",
+      "class": "Economy",
+      "mean_price": 5633.01,
+      "std_price": 3420.51,
+      "min_price": 2339.0,
+      "max_price": 31773.0,
+      "mean_duration_hours": 6.31,
+      "sample_count": 1684
+    },
+    {
+      "airline": "Indigo",
+      "class": "Economy",
+      "mean_price": 3935.42,
+      "std_price": 2486.16,
+      "min_price": 2339.0,
+      "max_price": 21063.0,
+      "mean_duration_hours": 4.39,
+      "sample_count": 1465
+    },
+    {
+      "airline": "SpiceJet",
+      "class": "Economy",
+      "mean_price": 4548.81,
+      "std_price": 2601.35,
+      "min_price": 2339.0,
+      "max_price": 18909.0,
+      "mean_duration_hours": 6.6,
+      "sample_count": 453
+    },
+    {
+      "airline": "Vistara",
+      "class": "Business",
+      "mean_price": 46072.26,
+      "std_price": 11011.47,
+      "min_price": 22140.0,
+      "max_price": 111437.0,
+      "mean_duration_hours": 10.05,
+      "sample_count": 2892
+    },
+    {
+      "airline": "Vistara",
+      "class": "Economy",
+      "mean_price": 6921.75,
+      "std_price": 3968.23,
+      "min_price": 2339.0,
+      "max_price": 31878.0,
+      "mean_duration_hours": 9.5,
+      "sample_count": 2920
+    }
+  ],
+  "Mumbai->Hyderabad": [
+    {
+      "airline": "AirAsia",
+      "class": "Economy",
+      "mean_price": 3068.7,
+      "std_price": 1988.18,
+      "min_price": 2105.0,
+      "max_price": 18254.0,
+      "mean_duration_hours": 11.11,
+      "sample_count": 216
+    },
+    {
+      "airline": "Air_India",
+      "class": "Business",
+      "mean_price": 43629.74,
+      "std_price": 7718.83,
+      "min_price": 17548.0,
+      "max_price": 60537.0,
+      "mean_duration_hours": 14.6,
+      "sample_count": 1159
+    },
+    {
+      "airline": "Air_India",
+      "class": "Economy",
+      "mean_price": 6100.05,
+      "std_price": 2515.82,
+      "min_price": 2111.0,
+      "max_price": 19698.0,
+      "mean_duration_hours": 17.47,
+      "sample_count": 2266
+    },
+    {
+      "airline": "GO_FIRST",
+      "class": "Economy",
+      "mean_price": 4603.87,
+      "std_price": 1961.52,
+      "min_price": 3282.0,
+      "max_price": 18333.0,
+      "mean_duration_hours": 10.23,
+      "sample_count": 1202
+    },
+    {
+      "airline": "Indigo",
+      "class": "Economy",
+      "mean_price": 5870.95,
+      "std_price": 4401.42,
+      "min_price": 2111.0,
+      "max_price": 25683.0,
+      "mean_duration_hours": 3.72,
+      "sample_count": 705
+    },
+    {
+      "airline": "Vistara",
+      "class": "Business",
+      "mean_price": 55570.45,
+      "std_price": 11789.37,
+      "min_price": 17604.0,
+      "max_price": 99677.0,
+      "mean_duration_hours": 12.95,
+      "sample_count": 2321
+    },
+    {
+      "airline": "Vistara",
+      "class": "Economy",
+      "mean_price": 6231.47,
+      "std_price": 3420.15,
+      "min_price": 2856.0,
+      "max_price": 25096.0,
+      "mean_duration_hours": 13.45,
+      "sample_count": 2601
+    }
+  ],
+  "Mumbai->Kolkata": [
+    {
+      "airline": "AirAsia",
+      "class": "Economy",
+      "mean_price": 3977.94,
+      "std_price": 2267.92,
+      "min_price": 2836.0,
+      "max_price": 19406.0,
+      "mean_duration_hours": 9.93,
+      "sample_count": 463
+    },
+    {
+      "airline": "Air_India",
+      "class": "Business",
+      "mean_price": 47907.27,
+      "std_price": 5567.08,
+      "min_price": 31292.0,
+      "max_price": 67200.0,
+      "mean_duration_hours": 15.02,
+      "sample_count": 1419
+    },
+    {
+      "airline": "Air_India",
+      "class": "Economy",
+      "mean_price": 7287.92,
+      "std_price": 3378.18,
+      "min_price": 2835.0,
+      "max_price": 21693.0,
+      "mean_duration_hours": 16.38,
+      "sample_count": 2059
+    },
+    {
+      "airline": "GO_FIRST",
+      "class": "Economy",
+      "mean_price": 6106.5,
+      "std_price": 1205.1,
+      "min_price": 4499.0,
+      "max_price": 16917.0,
+      "mean_duration_hours": 10.0,
+      "sample_count": 1150
+    },
+    {
+      "airline": "Indigo",
+      "class": "Economy",
+      "mean_price": 7415.24,
+      "std_price": 4109.64,
+      "min_price": 2835.0,
+      "max_price": 28571.0,
+      "mean_duration_hours": 5.88,
+      "sample_count": 1690
+    },
+    {
+      "airline": "SpiceJet",
+      "class": "Economy",
+      "mean_price": 7065.21,
+      "std_price": 2843.07,
+      "min_price": 4438.0,
+      "max_price": 26181.0,
+      "mean_duration_hours": 16.83,
+      "sample_count": 973
+    },
+    {
+      "airline": "Vistara",
+      "class": "Business",
+      "mean_price": 62525.27,
+      "std_price": 10947.98,
+      "min_price": 31436.0,
+      "max_price": 100909.0,
+      "mean_duration_hours": 13.41,
+      "sample_count": 2409
+    },
+    {
+      "airline": "Vistara",
+      "class": "Economy",
+      "mean_price": 8258.27,
+      "std_price": 3512.82,
+      "min_price": 4499.0,
+      "max_price": 27091.0,
+      "mean_duration_hours": 13.12,
+      "sample_count": 2439
+    }
+  ]
+}
