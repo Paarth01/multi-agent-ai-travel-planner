@@ -1,0 +1,383 @@
+{
+  "price_stats": {
+    "Bangalore": [
+      {
+        "room_class": "Elite",
+        "mean_price_per_night": 9949.66,
+        "std_price_per_night": 4638.71,
+        "min_price_per_night": 2250.0,
+        "max_price_per_night": 16200.0,
+        "mean_rating": 3.3,
+        "amenities": [
+          "wifi",
+          "breakfast",
+          "gym"
+        ],
+        "sample_count": 2690
+      },
+      {
+        "room_class": "Premium",
+        "mean_price_per_night": 12912.3,
+        "std_price_per_night": 6483.52,
+        "min_price_per_night": 3000.0,
+        "max_price_per_night": 25200.0,
+        "mean_rating": 3.4,
+        "amenities": [
+          "wifi",
+          "breakfast",
+          "gym",
+          "pool"
+        ],
+        "sample_count": 1822
+      },
+      {
+        "room_class": "Presidential",
+        "mean_price_per_night": 21031.62,
+        "std_price_per_night": 10021.91,
+        "min_price_per_night": 4750.0,
+        "max_price_per_night": 39900.0,
+        "mean_rating": 3.8,
+        "amenities": [
+          "wifi",
+          "breakfast",
+          "gym",
+          "pool",
+          "spa",
+          "parking"
+        ],
+        "sample_count": 668
+      },
+      {
+        "room_class": "Standard",
+        "mean_price_per_night": 6975.25,
+        "std_price_per_night": 3326.55,
+        "min_price_per_night": 1625.0,
+        "max_price_per_night": 11700.0,
+        "mean_rating": 3.4,
+        "amenities": [
+          "wifi",
+          "breakfast"
+        ],
+        "sample_count": 2171
+      }
+    ],
+    "Delhi": [
+      {
+        "room_class": "Elite",
+        "mean_price_per_night": 9256.82,
+        "std_price_per_night": 4355.83,
+        "min_price_per_night": 2100.0,
+        "max_price_per_night": 15120.0,
+        "mean_rating": 3.7,
+        "amenities": [
+          "wifi",
+          "breakfast",
+          "gym"
+        ],
+        "sample_count": 2040
+      },
+      {
+        "room_class": "Premium",
+        "mean_price_per_night": 12640.05,
+        "std_price_per_night": 5889.38,
+        "min_price_per_night": 2800.0,
+        "max_price_per_night": 23520.0,
+        "mean_rating": 3.8,
+        "amenities": [
+          "wifi",
+          "breakfast",
+          "gym",
+          "pool"
+        ],
+        "sample_count": 1115
+      },
+      {
+        "room_class": "Presidential",
+        "mean_price_per_night": 20897.21,
+        "std_price_per_night": 9304.03,
+        "min_price_per_night": 4433.33,
+        "max_price_per_night": 37240.0,
+        "mean_rating": 4.0,
+        "amenities": [
+          "wifi",
+          "breakfast",
+          "gym",
+          "pool",
+          "spa",
+          "parking"
+        ],
+        "sample_count": 610
+      },
+      {
+        "room_class": "Standard",
+        "mean_price_per_night": 6788.03,
+        "std_price_per_night": 3078.8,
+        "min_price_per_night": 1516.67,
+        "max_price_per_night": 10920.0,
+        "mean_rating": 3.8,
+        "amenities": [
+          "wifi",
+          "breakfast"
+        ],
+        "sample_count": 1862
+      }
+    ],
+    "Hyderabad": [
+      {
+        "room_class": "Elite",
+        "mean_price_per_night": 6501.49,
+        "std_price_per_night": 3118.32,
+        "min_price_per_night": 1500.0,
+        "max_price_per_night": 10800.0,
+        "mean_rating": 3.7,
+        "amenities": [
+          "wifi",
+          "breakfast",
+          "gym"
+        ],
+        "sample_count": 2712
+      },
+      {
+        "room_class": "Premium",
+        "mean_price_per_night": 8670.18,
+        "std_price_per_night": 4313.9,
+        "min_price_per_night": 2000.0,
+        "max_price_per_night": 16800.0,
+        "mean_rating": 3.7,
+        "amenities": [
+          "wifi",
+          "breakfast",
+          "gym",
+          "pool"
+        ],
+        "sample_count": 1860
+      },
+      {
+        "room_class": "Presidential",
+        "mean_price_per_night": 13635.54,
+        "std_price_per_night": 6813.49,
+        "min_price_per_night": 3166.67,
+        "max_price_per_night": 26600.0,
+        "mean_rating": 3.5,
+        "amenities": [
+          "wifi",
+          "breakfast",
+          "gym",
+          "pool",
+          "spa",
+          "parking"
+        ],
+        "sample_count": 1233
+      },
+      {
+        "room_class": "Standard",
+        "mean_price_per_night": 4742.51,
+        "std_price_per_night": 2243.84,
+        "min_price_per_night": 1083.33,
+        "max_price_per_night": 7800.0,
+        "mean_rating": 3.7,
+        "amenities": [
+          "wifi",
+          "breakfast"
+        ],
+        "sample_count": 2290
+      }
+    ],
+    "Mumbai": [
+      {
+        "room_class": "Elite",
+        "mean_price_per_night": 11236.37,
+        "std_price_per_night": 5246.84,
+        "min_price_per_night": 2550.0,
+        "max_price_per_night": 18360.0,
+        "mean_rating": 3.7,
+        "amenities": [
+          "wifi",
+          "breakfast",
+          "gym"
+        ],
+        "sample_count": 4024
+      },
+      {
+        "room_class": "Premium",
+        "mean_price_per_night": 15006.63,
+        "std_price_per_night": 7204.8,
+        "min_price_per_night": 3400.0,
+        "max_price_per_night": 28560.0,
+        "mean_rating": 3.5,
+        "amenities": [
+          "wifi",
+          "breakfast",
+          "gym",
+          "pool"
+        ],
+        "sample_count": 2224
+      },
+      {
+        "room_class": "Presidential",
+        "mean_price_per_night": 24252.92,
+        "std_price_per_night": 11250.24,
+        "min_price_per_night": 5383.33,
+        "max_price_per_night": 45220.0,
+        "mean_rating": 3.7,
+        "amenities": [
+          "wifi",
+          "breakfast",
+          "gym",
+          "pool",
+          "spa",
+          "parking"
+        ],
+        "sample_count": 1255
+      },
+      {
+        "room_class": "Standard",
+        "mean_price_per_night": 8040.26,
+        "std_price_per_night": 3829.2,
+        "min_price_per_night": 1841.67,
+        "max_price_per_night": 13260.0,
+        "mean_rating": 3.7,
+        "amenities": [
+          "wifi",
+          "breakfast"
+        ],
+        "sample_count": 2573
+      }
+    ]
+  },
+  "hotel_names": {
+    "Delhi": [
+      {
+        "name": "Atliq Grands",
+        "category": "Luxury",
+        "rating": 4.3
+      },
+      {
+        "name": "Atliq City",
+        "category": "Business",
+        "rating": 3.0
+      },
+      {
+        "name": "Atliq Blu",
+        "category": "Luxury",
+        "rating": 4.3
+      },
+      {
+        "name": "Atliq Bay",
+        "category": "Luxury",
+        "rating": 3.1
+      },
+      {
+        "name": "Atliq Palace",
+        "category": "Business",
+        "rating": 4.3
+      }
+    ],
+    "Mumbai": [
+      {
+        "name": "Atliq Exotica",
+        "category": "Luxury",
+        "rating": 4.4
+      },
+      {
+        "name": "Atliq Grands",
+        "category": "Luxury",
+        "rating": 3.0
+      },
+      {
+        "name": "Atliq Exotica",
+        "category": "Luxury",
+        "rating": 4.3
+      },
+      {
+        "name": "Atliq City",
+        "category": "Business",
+        "rating": 3.0
+      },
+      {
+        "name": "Atliq Blu",
+        "category": "Luxury",
+        "rating": 4.2
+      },
+      {
+        "name": "Atliq Bay",
+        "category": "Luxury",
+        "rating": 2.4
+      },
+      {
+        "name": "Atliq Palace",
+        "category": "Business",
+        "rating": 4.3
+      },
+      {
+        "name": "Atliq Seasons",
+        "category": "Business",
+        "rating": 2.3
+      }
+    ],
+    "Hyderabad": [
+      {
+        "name": "Atliq Grands",
+        "category": "Luxury",
+        "rating": 3.1
+      },
+      {
+        "name": "Atliq Exotica",
+        "category": "Luxury",
+        "rating": 2.3
+      },
+      {
+        "name": "Atliq City",
+        "category": "Business",
+        "rating": 4.3
+      },
+      {
+        "name": "Atliq Blu",
+        "category": "Luxury",
+        "rating": 4.2
+      },
+      {
+        "name": "Atliq Bay",
+        "category": "Luxury",
+        "rating": 4.3
+      },
+      {
+        "name": "Atliq Palace",
+        "category": "Business",
+        "rating": 3.1
+      }
+    ],
+    "Bangalore": [
+      {
+        "name": "Atliq Grands",
+        "category": "Luxury",
+        "rating": 2.4
+      },
+      {
+        "name": "Atliq Exotica",
+        "category": "Luxury",
+        "rating": 3.0
+      },
+      {
+        "name": "Atliq City",
+        "category": "Business",
+        "rating": 4.3
+      },
+      {
+        "name": "Atliq Blu",
+        "category": "Luxury",
+        "rating": 3.1
+      },
+      {
+        "name": "Atliq Bay",
+        "category": "Luxury",
+        "rating": 4.3
+      },
+      {
+        "name": "Atliq Palace",
+        "category": "Business",
+        "rating": 3.0
+      }
+    ]
+  }
+}
