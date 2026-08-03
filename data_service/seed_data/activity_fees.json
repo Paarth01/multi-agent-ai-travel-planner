@@ -1,0 +1,109 @@
+{
+  "_source_note": "Hand-curated (not bulk-aggregated like flight_stats.json/hotel_stats.json) from ASI (Archaeological Survey of India) official entry fees and museum-published pricing, cross-referenced across multiple sources as of early-mid 2026. Unlike flight/hotel data, no clean bulk dataset of real Indian attraction prices exists publicly -- attraction visits rarely get captured as priced transactions the way bookings do. Coverage is intentionally limited to fee-gated historical/cultural sites (monuments, museums) in the 4 cities also covered by the hotel service, since that's the only category of attraction with a real, verifiable, published price. Beaches/nightlife/food/nature categories have no equivalent real fee data and are NOT covered here -- the activity agent falls through to Google Places or mock data for those. Some sources disagreed by 2-3x for the same site (e.g. CSMVS museum quoted anywhere from Rs60 to Rs200 for Indian visitors depending on source/date) -- the most recent, most-corroborated figure was used in each case, but treat these as approximate and re-verify before any production use.",
+  "cities": {
+    "Delhi": [
+      {
+        "name": "Red Fort",
+        "category": "history",
+        "entry_fee_inr": 35,
+        "entry_fee_foreign_inr": 550,
+        "duration_hours": 2.5,
+        "authority": "ASI"
+      },
+      {
+        "name": "Qutub Minar",
+        "category": "history",
+        "entry_fee_inr": 40,
+        "entry_fee_foreign_inr": 600,
+        "duration_hours": 2.0,
+        "authority": "ASI"
+      },
+      {
+        "name": "Humayun's Tomb",
+        "category": "history",
+        "entry_fee_inr": 35,
+        "entry_fee_foreign_inr": 550,
+        "duration_hours": 2.0,
+        "authority": "ASI"
+      },
+      {
+        "name": "Jantar Mantar",
+        "category": "history",
+        "entry_fee_inr": 20,
+        "entry_fee_foreign_inr": 250,
+        "duration_hours": 1.0,
+        "authority": "ASI"
+      },
+      {
+        "name": "Lotus Temple",
+        "category": "history",
+        "entry_fee_inr": 0,
+        "entry_fee_foreign_inr": 0,
+        "duration_hours": 1.0,
+        "authority": "Bahá'í community (free entry)"
+      }
+    ],
+    "Mumbai": [
+      {
+        "name": "Elephanta Caves",
+        "category": "history",
+        "entry_fee_inr": 40,
+        "entry_fee_foreign_inr": 600,
+        "duration_hours": 3.0,
+        "authority": "ASI (excludes ferry, booked separately)"
+      },
+      {
+        "name": "Gateway of India",
+        "category": "history",
+        "entry_fee_inr": 0,
+        "entry_fee_foreign_inr": 0,
+        "duration_hours": 0.5,
+        "authority": "Public monument (free entry)"
+      },
+      {
+        "name": "CSMVS Museum",
+        "category": "history",
+        "entry_fee_inr": 150,
+        "entry_fee_foreign_inr": 700,
+        "duration_hours": 2.5,
+        "authority": "Chhatrapati Shivaji Maharaj Vastu Sangrahalaya (source prices vary Rs60-200, used most recent)"
+      }
+    ],
+    "Bangalore": [
+      {
+        "name": "Lalbagh Botanical Garden",
+        "category": "nature",
+        "entry_fee_inr": 50,
+        "entry_fee_foreign_inr": 50,
+        "duration_hours": 2.0,
+        "authority": "Horticulture Dept, Karnataka"
+      },
+      {
+        "name": "Bangalore Palace",
+        "category": "history",
+        "entry_fee_inr": 230,
+        "entry_fee_foreign_inr": 460,
+        "duration_hours": 1.5,
+        "authority": "Palace Board (includes audio guide)"
+      }
+    ],
+    "Hyderabad": [
+      {
+        "name": "Golconda Fort",
+        "category": "history",
+        "entry_fee_inr": 25,
+        "entry_fee_foreign_inr": 300,
+        "duration_hours": 2.5,
+        "authority": "ASI (online booking cheaper: Rs20/Rs250)"
+      },
+      {
+        "name": "Charminar",
+        "category": "history",
+        "entry_fee_inr": 25,
+        "entry_fee_foreign_inr": 300,
+        "duration_hours": 1.0,
+        "authority": "ASI (cashless: Rs20/Rs250)"
+      }
+    ]
+  }
+}
