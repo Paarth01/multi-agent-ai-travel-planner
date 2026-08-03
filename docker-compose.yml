@@ -1,0 +1,40 @@
+version: "3.8"
+
+services:
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+
+  data-service:
+    build:
+      context: .
+      dockerfile: data_service/Dockerfile
+    ports:
+      - "8100:8100"
+
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      OWN_FLIGHT_SERVICE_URL: http://data-service:8100
+      OWN_HOTEL_SERVICE_URL: http://data-service:8100
+      OWN_ACTIVITY_SERVICE_URL: http://data-service:8100
+      REDIS_URL: redis://redis:6379/0
+      CORS_ALLOWED_ORIGINS: http://localhost:5173,http://localhost:8080
+    depends_on:
+      - redis
+      - data-service
+
+  frontend:
+    build:
+      context: ./frontend
+      args:
+        VITE_API_BASE_URL: http://localhost:8000
+    ports:
+      - "8080:80"
+    depends_on:
+      - api
