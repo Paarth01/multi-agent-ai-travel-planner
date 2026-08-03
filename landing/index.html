@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<!--
+  TripSync AI landing page — static, no build step needed.
+
+  BEFORE DEPLOYING, find-and-replace these placeholder tokens:
+    YOUR_GITHUB_URL      -> your repo URL, e.g. https://github.com/Paarth01/tripsync-ai
+    YOUR_LIVE_DEMO_URL   -> your deployed frontend URL (see ../DEPLOYMENT.md)
+    YOUR_LINKEDIN_URL    -> https://linkedin.com/in/paarth-agl
+
+  Also replace the hero screenshot placeholder — search for "PLACEHOLDER"
+  below — with a real screenshot of the running app.
+
+  To deploy this page itself: it's a single static HTML file (Tailwind
+  loaded via CDN, no build tooling needed) — drop it on Vercel/Netlify/
+  GitHub Pages as-is, or serve it from the same nginx container as the
+  frontend at a separate path if you want app + landing page together.
+-->
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>TripSync AI | Multi-Agent Orchestration</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700&amp;family=Inter:wght@400;500&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary": "#4fdbc8",
+                    "on-error": "#690005",
+                    "outline": "#859490",
+                    "on-error-container": "#ffdad6",
+                    "on-tertiary-fixed": "#3a0b00",
+                    "surface-tint": "#4fdbc8",
+                    "on-secondary-fixed": "#001e2f",
+                    "error-container": "#93000a",
+                    "surface-container": "#201f1f",
+                    "surface-container-high": "#2a2a2a",
+                    "on-secondary-fixed-variant": "#004c6e",
+                    "primary-container": "#14b8a6",
+                    "on-surface-variant": "#bbcac6",
+                    "background": "#0a0a0a",
+                    "border-subtle": "#1f2937",
+                    "tertiary-fixed-dim": "#ffb59e",
+                    "on-background": "#e5e2e1",
+                    "outline-variant": "#3c4947",
+                    "technical-yellow": "#E4F222",
+                    "surface-bright": "#3a3939",
+                    "on-primary": "#003731",
+                    "text-muted": "#a1a1aa",
+                    "on-tertiary-container": "#6c2106",
+                    "surface-container-highest": "#353534",
+                    "on-primary-fixed-variant": "#005048",
+                    "tertiary-container": "#f38764",
+                    "inverse-primary": "#006b5f",
+                    "on-secondary": "#00344d",
+                    "surface-container-low": "#1c1b1b",
+                    "surface-elevated": "#171717",
+                    "primary-fixed-dim": "#4fdbc8",
+                    "secondary-container": "#00a2e6",
+                    "inverse-on-surface": "#313030",
+                    "surface-dim": "#0a0a0a",
+                    "on-primary-container": "#00423b",
+                    "secondary-fixed-dim": "#89ceff",
+                    "tertiary": "#ffb59e",
+                    "tertiary-fixed": "#ffdbd0",
+                    "secondary-fixed": "#c9e6ff",
+                    "on-tertiary-fixed-variant": "#7c2d11",
+                    "on-primary-fixed": "#00201c",
+                    "on-secondary-container": "#00344e",
+                    "on-surface": "#e5e2e1",
+                    "on-tertiary": "#5e1800",
+                    "error": "#ffb4ab",
+                    "secondary": "#89ceff",
+                    "surface-container-lowest": "#050505",
+                    "inverse-surface": "#e5e2e1",
+                    "primary-fixed": "#71f8e4",
+                    "surface-variant": "#353534",
+                    "surface": "#0a0a0a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "container-max": "1200px",
+                    "margin-desktop": "48px",
+                    "margin-mobile": "16px",
+                    "gutter": "24px",
+                    "base": "4px"
+            },
+            "fontFamily": {
+                    "body-md": ["Inter"],
+                    "body-sm": ["Inter"],
+                    "headline-lg-mobile": ["Hanken Grotesk"],
+                    "headline-lg": ["Hanken Grotesk"],
+                    "display-xl": ["Hanken Grotesk"],
+                    "label-mono": ["JetBrains Mono"],
+                    "label-mono-lg": ["JetBrains Mono"]
+            },
+            "fontSize": {
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "display-xl": ["60px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-mono": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                    "label-mono-lg": ["14px", {"lineHeight": "1.0", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #0a0a0a;
+            color: #e5e2e1;
+            scroll-behavior: smooth;
+        }
+        .glass-card {
+            background: rgba(23, 23, 23, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid #1f2937;
+        }
+        .node-line {
+            background: linear-gradient(90deg, transparent, #14b8a6, transparent);
+            height: 1px;
+            width: 100%;
+        }
+        .mesh-bg {
+            background-image: radial-gradient(circle at 2px 2px, #1f2937 1px, transparent 0);
+            background-size: 24px 24px;
+        }
+    </style>
+</head>
+<body class="font-body-md text-body-md overflow-x-hidden">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-margin-desktop py-4 max-w-container-max mx-auto bg-background/80 backdrop-blur-xl border-b border-outline-variant left-1/2 -translate-x-1/2">
+<div class="font-headline-lg text-headline-lg font-bold text-on-surface tracking-tight">TripSync AI</div>
+<nav class="hidden md:flex gap-8">
+<a class="text-on-surface-variant font-body-md text-body-md hover:text-primary transition-colors duration-200" href="#how-it-works">How it Works</a>
+<a class="text-on-surface-variant font-body-md text-body-md hover:text-primary transition-colors duration-200" href="#tech-stack">Tech Stack</a>
+<a class="text-on-surface-variant font-body-md text-body-md hover:text-primary transition-colors duration-200" href="#architecture">Architecture</a>
+</nav>
+<div class="flex gap-4">
+<a class="px-6 py-2 border border-outline-variant rounded-lg text-on-surface font-body-md hover:bg-surface-variant transition-all duration-200 inline-block" href="YOUR_GITHUB_URL">GitHub</a>
+<a class="px-6 py-2 bg-primary-container text-on-primary-container rounded-lg font-bold hover:opacity-90 active:scale-95 transition-all inline-block" href="YOUR_LIVE_DEMO_URL">Live Demo</a>
+</div>
+</header>
+<main class="pt-24">
+<!-- Hero Section -->
+<section class="relative min-h-[80vh] flex flex-col justify-center items-center text-center px-margin-mobile md:px-margin-desktop py-20 overflow-hidden">
+<div class="absolute inset-0 mesh-bg opacity-30 -z-10"></div>
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/10 rounded-full blur-[120px] -z-10"></div>
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary/30 bg-primary/5 mb-8">
+<span class="font-label-mono text-label-mono text-primary uppercase tracking-widest">Multi-Agent Protocol v1.0</span>
+</div>
+<h1 class="font-display-xl text-display-xl text-on-surface max-w-4xl mb-6">
+                A multi-agent trip planner that <span class="text-primary">negotiates its own budget.</span>
+</h1>
+<p class="font-body-md text-body-md text-text-muted max-w-2xl mb-10 leading-relaxed">
+                Four specialized AI agents — flight, hotel, activity, pricing — coordinate in real time to build a complete itinerary, reallocating budget between each other when a trip doesn't fit.
+            </p>
+<div class="flex flex-col sm:flex-row gap-4">
+<a class="px-8 py-4 bg-primary text-background font-bold rounded-lg text-lg flex items-center gap-2 hover:shadow-[0_0_20px_rgba(79,219,200,0.4)] transition-all" href="YOUR_LIVE_DEMO_URL">
+                    Try it live <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+<a class="px-8 py-4 border border-border-subtle bg-surface-container-lowest text-on-surface font-bold rounded-lg text-lg hover:border-primary/50 transition-all" href="YOUR_GITHUB_URL">
+                    View on GitHub
+                </a>
+</div>
+<div class="mt-20 w-full max-w-5xl mx-auto rounded-xl border border-border-subtle bg-surface-container-low p-2 shadow-2xl">
+<div class="bg-surface-container-highest rounded-lg overflow-hidden relative">
+<div class="absolute top-0 left-0 w-full h-8 bg-surface-container flex items-center px-4 gap-2 border-b border-outline-variant">
+<div class="w-3 h-3 rounded-full bg-red-500/50"></div>
+<div class="w-3 h-3 rounded-full bg-yellow-500/50"></div>
+<div class="w-3 h-3 rounded-full bg-green-500/50"></div>
+<div class="ml-4 px-4 py-0.5 rounded bg-surface-dim text-label-mono text-[10px] text-text-muted">app.tripsync.ai</div>
+</div>
+<div class="pt-8 aspect-video w-full flex items-center justify-center bg-[#050505]">
+<!-- PLACEHOLDER: Stitch-generated illustrative mockup, not a real
+     screenshot. Replace src with an actual screenshot of the running
+     agent-progress view (e.g. from frontend/src/components/AgentProgress.tsx)
+     before this goes live — see the earlier screenshots you shared of
+     the real app for a source. -->
+<div class="w-full h-full relative">
+<img class="w-full h-full object-cover" data-alt="A high-fidelity interface of a travel planning dashboard in dark mode. The UI features a sidebar with agent activity logs showing flight_01 and hotel_02 statuses in teal monospaced text. The main canvas displays a dynamic itinerary with price breakdown charts and a real-time negotiation log where agents trade budget portions. Professional technical aesthetic with sharp lines and glassmorphism panels." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBpnGkazYHeucarxehUvNxJhSGSph2svJq6yJ-6OBNA9HZwQlQnCPTGLtBsyqXyYEPEtafuujZ-SRItZiW0VEK_pdrlkGLjf3V_4j7BEcwogtofUwi0ehX4dMBD6BVoknfYpSTngOHaWaoxhYiWVc5-7fqpwVFcAONqRBO-a4iuOusfiIgIKDPBck5oYOYwmULADcC1fiKRE1YUBty8jmBjeD3l1LOTwCl5NJ1eOci2vKedtM-loTy7yw"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Architecture Section -->
+<section class="py-32 px-margin-desktop max-w-container-max mx-auto" id="how-it-works">
+<div class="text-center mb-20">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-4">Autonomous Architecture</h2>
+<p class="text-text-muted max-w-xl mx-auto">Complex orchestration handled via distributed state management and recursive negotiation loops.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-4 relative">
+<!-- Step 1 -->
+<div class="p-8 border border-border-subtle rounded-xl bg-surface-container-lowest flex flex-col items-center text-center group hover:border-primary transition-all">
+<div class="w-12 h-12 rounded bg-primary/10 flex items-center justify-center mb-6 text-primary border border-primary/20">
+<span class="material-symbols-outlined">person</span>
+</div>
+<span class="font-label-mono text-label-mono text-primary mb-2">INPUT_LAYER</span>
+<h3 class="font-bold text-lg mb-2">User Request</h3>
+<p class="text-sm text-text-muted">Natural language constraints &amp; budget caps.</p>
+</div>
+<!-- Step 2 -->
+<div class="p-8 border border-border-subtle rounded-xl bg-surface-container-lowest flex flex-col items-center text-center group hover:border-primary transition-all">
+<div class="w-12 h-12 rounded bg-primary/10 flex items-center justify-center mb-6 text-primary border border-primary/20">
+<span class="material-symbols-outlined">hub</span>
+</div>
+<span class="font-label-mono text-label-mono text-primary mb-2">ORCHESTRATOR</span>
+<h3 class="font-bold text-lg mb-2">Parallel Search</h3>
+<p class="text-sm text-text-muted">Flight, Hotel, and Activity agents spawn sub-tasks.</p>
+</div>
+<!-- Step 3 -->
+<div class="p-8 border border-border-subtle rounded-xl bg-surface-container-lowest flex flex-col items-center text-center group hover:border-primary transition-all">
+<div class="w-12 h-12 rounded bg-primary/10 flex items-center justify-center mb-6 text-primary border border-primary/20">
+<span class="material-symbols-outlined">calculate</span>
+</div>
+<span class="font-label-mono text-label-mono text-primary mb-2">VALIDATION</span>
+<h3 class="font-bold text-lg mb-2">Pricing Eval</h3>
+<p class="text-sm text-text-muted">Comparing total sum against the defined budget.</p>
+</div>
+<!-- Step 4 -->
+<div class="p-8 border border-border-subtle rounded-xl bg-surface-container-lowest flex flex-col items-center text-center group hover:border-primary transition-all">
+<div class="w-12 h-12 rounded bg-primary/10 flex items-center justify-center mb-6 text-primary border border-primary/20">
+<span class="material-symbols-outlined">sync</span>
+</div>
+<span class="font-label-mono text-label-mono text-primary mb-2">RECURSION</span>
+<h3 class="font-bold text-lg mb-2">Loop/Negotiate</h3>
+<p class="text-sm text-text-muted">Agents trade credits to optimize the itinerary.</p>
+</div>
+</div>
+</section>
+<!-- Real Data Section -->
+<section class="py-24 bg-surface-container-lowest border-y border-border-subtle">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="mb-16">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-2">Verified Data Foundations</h2>
+<p class="text-text-muted">Powered by curated datasets for deterministic planning.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Data Card 1 -->
+<div class="p-6 border border-border-subtle rounded bg-background flex flex-col gap-4">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-primary">flight</span>
+<span class="font-label-mono text-[10px] text-text-muted px-2 py-0.5 border border-border-subtle rounded">SRC: DOM_AIR_2022</span>
+</div>
+<div>
+<div class="text-3xl font-bold text-on-surface">300K+</div>
+<div class="text-sm text-text-muted mt-1">Real Flight Fares</div>
+</div>
+<div class="font-label-mono text-label-mono text-primary/70 bg-primary/5 p-3 rounded text-xs mt-auto">
+                            data_type: pricing_series<br/>
+                            region: IN_DOMESTIC
+                        </div>
+</div>
+<!-- Data Card 2 -->
+<div class="p-6 border border-border-subtle rounded bg-background flex flex-col gap-4">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-primary">hotel</span>
+<span class="font-label-mono text-[10px] text-text-muted px-2 py-0.5 border border-border-subtle rounded">SRC: ATLIQ_GRANDS</span>
+</div>
+<div>
+<div class="text-3xl font-bold text-on-surface">134K+</div>
+<div class="text-sm text-text-muted mt-1">Real Hotel Bookings</div>
+</div>
+<div class="font-label-mono text-label-mono text-primary/70 bg-primary/5 p-3 rounded text-xs mt-auto">
+                            data_type: transactional<br/>
+                            metric: occupancy_realized
+                        </div>
+</div>
+<!-- Data Card 3 -->
+<div class="p-6 border border-border-subtle rounded bg-background flex flex-col gap-4">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-primary">museum</span>
+<span class="font-label-mono text-[10px] text-text-muted px-2 py-0.5 border border-border-subtle rounded">SRC: GOV_C_LIST</span>
+</div>
+<div>
+<div class="text-3xl font-bold text-on-surface">ASI Curated</div>
+<div class="text-sm text-text-muted mt-1">Monument Entrance Fees</div>
+</div>
+<div class="font-label-mono text-label-mono text-primary/70 bg-primary/5 p-3 rounded text-xs mt-auto">
+                            data_type: official_rates<br/>
+                            last_sync: 2024-Q2
+                        </div>
+</div>
+</div>
+</div>
+</section>
+<!-- Tech Stack Section -->
+<section class="py-32 px-margin-desktop max-w-container-max mx-auto" id="tech-stack">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-6">The Multi-Agent Tech Stack</h2>
+<p class="text-text-muted mb-10 leading-relaxed">
+                        Built for low-latency state transitions and high-concurrency negotiation phases. Every layer is optimized for developer observability.
+                    </p>
+<div class="space-y-8">
+<div>
+<h4 class="font-label-mono text-label-mono uppercase tracking-widest text-primary mb-4">Backend Infrastructure</h4>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-surface-container border border-border-subtle rounded text-xs font-label-mono">LangGraph</span>
+<span class="px-3 py-1 bg-surface-container border border-border-subtle rounded text-xs font-label-mono">FastAPI</span>
+<span class="px-3 py-1 bg-surface-container border border-border-subtle rounded text-xs font-label-mono">Redis (Cache)</span>
+<span class="px-3 py-1 bg-surface-container border border-border-subtle rounded text-xs font-label-mono">SSE (Streaming)</span>
+<span class="px-3 py-1 bg-surface-container border border-border-subtle rounded text-xs font-label-mono">Pydantic</span>
+<span class="px-3 py-1 bg-surface-container border border-border-subtle rounded text-xs font-label-mono">Python 3.12</span>
+</div>
+</div>
+<div>
+<h4 class="font-label-mono text-label-mono uppercase tracking-widest text-primary mb-4">Frontend Experience</h4>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-surface-container border border-border-subtle rounded text-xs font-label-mono">React 18</span>
+<span class="px-3 py-1 bg-surface-container border border-border-subtle rounded text-xs font-label-mono">TypeScript</span>
+<span class="px-3 py-1 bg-surface-container border border-border-subtle rounded text-xs font-label-mono">Tailwind CSS</span>
+<span class="px-3 py-1 bg-surface-container border border-border-subtle rounded text-xs font-label-mono">Chart.js</span>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-surface-elevated border border-border-subtle rounded-2xl p-8 relative overflow-hidden">
+<div class="absolute -top-24 -right-24 w-64 h-64 bg-primary/5 rounded-full blur-[80px]"></div>
+<div class="font-label-mono text-[11px] space-y-4 text-text-muted overflow-hidden">
+<div class="text-primary opacity-50">// Orchestration State Log</div>
+<div class="flex gap-2"><span class="text-primary">[01]</span> <span>initializing graph: trip_planner_graph</span></div>
+<div class="flex gap-2"><span class="text-primary">[02]</span> <span>node: flight_agent status: active</span></div>
+<div class="flex gap-2"><span class="text-primary">[03]</span> <span>node: hotel_agent status: active</span></div>
+<div class="flex gap-2"><span class="text-primary">[04]</span> <span class="text-technical-yellow">conflict detected: total_sum &gt; budget_cap</span></div>
+<div class="flex gap-2"><span class="text-primary">[05]</span> <span>negotiation: flight_01 -&gt; hotel_01 | -15% budget</span></div>
+<div class="flex gap-2"><span class="text-primary">[06]</span> <span class="text-green-400">consensus reached: itinerary_locked</span></div>
+<div class="mt-8 border-t border-border-subtle pt-4">
+<div class="text-xs">Uptime: 99.98%</div>
+<div class="text-xs">Agents in flight: 4/4</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Reliability / Fallback Section -->
+<section class="py-32 bg-surface-container-lowest" id="architecture">
+<div class="max-w-container-max mx-auto px-margin-desktop text-center">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-4">Fail-Safe Resilience</h2>
+<p class="text-text-muted mb-16">Three-tier fallback mechanism ensuring planning continuity even during API outages.</p>
+<div class="flex flex-col md:flex-row items-center justify-center gap-12">
+<div class="w-full md:w-64 p-6 border border-primary rounded-xl bg-primary/5 flex flex-col gap-2">
+<span class="font-bold text-on-surface">Tier 1: Own Data Service</span>
+<p class="text-xs text-text-muted">Real Indian flight, hotel &amp; monument-fee datasets, self-hosted — no rate limits.</p>
+<span class="font-label-mono text-[10px] text-primary">priority: primary</span>
+</div>
+<div class="material-symbols-outlined text-border-subtle hidden md:block">arrow_forward</div>
+<div class="w-full md:w-64 p-6 border border-border-subtle rounded-xl bg-surface-container flex flex-col gap-2">
+<span class="font-bold text-on-surface">Tier 2: External API</span>
+<p class="text-xs text-text-muted">Live fetch from Amadeus &amp; Google Places when own-service coverage doesn't apply.</p>
+<span class="font-label-mono text-[10px] text-technical-yellow">priority: fallback_01</span>
+</div>
+<div class="material-symbols-outlined text-border-subtle hidden md:block">arrow_forward</div>
+<div class="w-full md:w-64 p-6 border border-border-subtle rounded-xl bg-surface-container flex flex-col gap-2 opacity-60">
+<span class="font-bold text-on-surface">Tier 3: Synthetic Mock</span>
+<p class="text-xs text-text-muted">Probabilistic estimation based on historical norms.</p>
+<span class="font-label-mono text-[10px] text-red-400">priority: fallback_02</span>
+</div>
+</div>
+<div class="mt-16 inline-block p-4 border border-border-subtle rounded bg-background">
+<div class="flex items-center gap-4 text-left">
+<div class="w-2 h-2 rounded-full bg-primary animate-pulse"></div>
+<span class="font-label-mono text-sm">119 automated tests passing · 92% coverage</span>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-32 px-margin-desktop text-center overflow-hidden relative">
+
+<h2 class="font-display-xl text-display-xl text-on-surface mb-8">Ready to sync?</h2>
+<div class="flex justify-center gap-4">
+<a class="px-10 py-5 bg-primary text-background font-extrabold rounded text-xl hover:scale-105 transition-transform inline-block" href="YOUR_LIVE_DEMO_URL">Deploy TripSync</a>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 px-margin-desktop max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-gutter border-t border-outline-variant">
+<div class="flex flex-col items-center md:items-start gap-2">
+<div class="font-headline-lg text-headline-lg font-bold text-on-surface">TripSync AI</div>
+<p class="text-text-muted text-sm text-center md:text-left">© 2024 TripSync AI. Built for the multi-agent future by Paarth Agl.</p>
+</div>
+<div class="flex gap-8">
+<a class="text-text-muted hover:text-primary transition-colors font-body-sm text-body-sm" href="YOUR_GITHUB_URL#readme">Documentation</a>
+<a class="text-text-muted hover:text-primary transition-colors font-body-sm text-body-sm" href="YOUR_GITHUB_URL">GitHub</a>
+<a class="text-text-muted hover:text-primary transition-colors font-body-sm text-body-sm" href="YOUR_LINKEDIN_URL">LinkedIn</a>
+</div>
+</footer>
+<script>
+        // Optional micro-interactions
+        document.querySelectorAll('button').forEach(btn => {
+            btn.addEventListener('mouseenter', () => {
+                // Subtle feedback handled by Tailwind classes
+            });
+        });
+
+        // Intersection observer for fade-in animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('section').forEach(section => {
+            section.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-10');
+            observer.observe(section);
+        });
+    </script>
+</body></html>
