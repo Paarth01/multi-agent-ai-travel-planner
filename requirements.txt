@@ -1,0 +1,11 @@
+fastapi==0.141.1
+uvicorn[standard]==0.52.0
+pydantic==2.13.4
+pydantic-settings==2.14.2
+langgraph==1.2.10
+httpx==0.28.1
+pytest==9.1.1
+respx==0.23.1
+pandas==3.0.2  # only needed to run scripts/build_*_seed.py, not for the app itself
+redis==8.1.0
+fakeredis==2.37.0  # only needed for tests (cache tests run against a fake Redis, no real server needed)
