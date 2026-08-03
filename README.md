@@ -47,21 +47,21 @@ multi-agent-ai-travel-planner/
 
 ```mermaid
 flowchart TD
-  Client[Frontend UI (browser)]
-  API[FastAPI /plan-trip]
+  Client[Frontend UI]
+  API[FastAPI]
   Orchestrator[LangGraph Orchestrator]
-  Flight[flight_agent: flights]
-  Hotel[hotel_agent: hotels]
-  Activity[activity_agent: activities]
-  Pricing[pricing_agent: budget eval]
-  Reallocate[reallocate: choose category]
-  Synthesize[synthesize: assemble itinerary]
-  Cache[(Cache: Redis / in-memory)]
-  OwnService[Own Data Service]
-  Amadeus[Amadeus API]
+  Flight[flight_agent]
+  Hotel[hotel_agent]
+  Activity[activity_agent]
+  Pricing[pricing_agent]
+  Reallocate[reallocate]
+  Synthesize[synthesize]
+  Cache[(Cache)]
+  OwnService[Own Service]
+  Amadeus[Amadeus]
   Google[Google Places]
 
-  Client -->|POST /plan-trip (SSE)| API
+  Client --> API
   API --> Orchestrator
   Orchestrator --> Flight
   Orchestrator --> Hotel
@@ -69,13 +69,13 @@ flowchart TD
   Flight --> Pricing
   Hotel --> Pricing
   Activity --> Pricing
-  Pricing -->|within budget| Synthesize
-  Pricing -->|over budget| Reallocate
+  Pricing --> Reallocate
+  Pricing --> Synthesize
   Reallocate --> Flight
   Reallocate --> Hotel
   Reallocate --> Activity
-  Synthesize -->|itinerary_ready (SSE)| API
-  API -->|SSE events: node_complete, itinerary_ready, done, error| Client
+  Synthesize --> API
+  API --> Client
 
   Flight --> Cache
   Hotel --> Cache
