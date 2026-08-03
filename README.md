@@ -8,7 +8,7 @@ budget negotiation when the initial plan doesn't fit.
 ## Project structure
 
 ```
-travel-planner/
+multi-agent-ai-travel-planner/
 ├── schemas/          Pydantic models shared across agents and the API
 │   └── messages.py
 ├── graph/             LangGraph orchestration

@@ -4,6 +4,36 @@ Different lengths for different places. Pick what fits.
 
 ---
 
+## GitHub repo setup
+
+**Repo name:** `multi-agent-ai-travel-planner`
+(keyword-first for GitHub search/discovery; keep "TripSync AI" as the
+project's display name in the README's H1, not the repo name itself)
+
+**Description** (GitHub "About" field):
+> Multi-agent AI travel planner built with LangGraph — 4 specialized agents (flight, hotel, activity, pricing) coordinate in real time via a budget negotiation loop. FastAPI + SSE backend, React/TypeScript frontend, real Indian travel pricing datasets, 119 tests.
+
+**Topics** (add via the gear icon next to "About"):
+```
+langgraph
+multi-agent-systems
+ai-agents
+llm-orchestration
+fastapi
+react
+typescript
+python
+server-sent-events
+redis
+docker
+pytest
+tailwindcss
+travel-planner
+real-time
+```
+
+---
+
 ## Resume bullet points (pick 2-3, not all)
 
 - Built a multi-agent AI travel planner using **LangGraph**, orchestrating 4 specialized agents (flight, hotel, activity, pricing) with **parallel execution** and a **cross-agent budget negotiation loop** that reallocates ceilings and re-runs only the affected agent — not a full restart — when a trip exceeds budget

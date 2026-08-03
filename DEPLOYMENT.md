@@ -25,18 +25,18 @@ one of the two `Dockerfile`s — check the error against
 Both Render and Vercel deploy from a GitHub repo, not a zip upload.
 
 ```bash
-cd travel-planner
+cd multi-agent-ai-travel-planner
 git init
 git add .
 git commit -m "Initial commit"
-gh repo create tripsync-ai --public --source=. --push
+gh repo create multi-agent-ai-travel-planner --public --source=. --push
 # or: create a repo on github.com, then git remote add origin <url> && git push
 ```
 
 ## 2. Deploy the data service (Render)
 
 1. Go to [render.com](https://render.com), sign up (free, GitHub login works)
-2. **New +** → **Web Service** → connect your `tripsync-ai` repo
+2. **New +** → **Web Service** → connect your `multi-agent-ai-travel-planner` repo
 3. Settings:
    - **Name**: `tripsync-data-service`
    - **Runtime**: Docker
@@ -83,7 +83,7 @@ hits a slow first load.
 ## 5. Deploy the frontend (Vercel)
 
 1. Go to [vercel.com](https://vercel.com), sign up (GitHub login works)
-2. **Add New** → **Project** → import your `tripsync-ai` repo
+2. **Add New** → **Project** → import your `multi-agent-ai-travel-planner` repo
 3. Settings:
    - **Root Directory**: `frontend`
    - **Framework Preset**: Vite (auto-detected)
@@ -92,14 +92,14 @@ hits a slow first load.
    VITE_API_BASE_URL=https://tripsync-api.onrender.com
    ```
    (the URL from step 4 — no trailing slash)
-5. **Deploy**. Vercel gives you a URL like `https://tripsync-ai.vercel.app`.
+5. **Deploy**. Vercel gives you a URL like `https://multi-agent-ai-travel-planner.vercel.app`.
 
 ## 6. Close the loop — tighten CORS
 
 Now that you have the Vercel URL, go back to Render → `tripsync-api` →
 **Environment**, update:
 ```
-CORS_ALLOWED_ORIGINS=https://tripsync-ai.vercel.app
+CORS_ALLOWED_ORIGINS=https://multi-agent-ai-travel-planner.vercel.app
 ```
 Save — Render redeploys automatically. This is what `cors_allowed_origins`
 in `config.py` reads (see `api/main.py`).
