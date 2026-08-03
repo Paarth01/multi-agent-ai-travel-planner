@@ -46,63 +46,54 @@ multi-agent-ai-travel-planner/
 ## How it works
 
 ```mermaid
-flowchart LR
-  %% Frontend and API
-  Client["Frontend UI\n(User browser)"] -->|POST /plan-trip (SSE)| API["FastAPI /plan-trip"]
+flowchart TD
+  Client[Frontend UI (browser)]
+  API[FastAPI /plan-trip]
+  Orchestrator[LangGraph Orchestrator]
+  Flight[flight_agent: flights]
+  Hotel[hotel_agent: hotels]
+  Activity[activity_agent: activities]
+  Pricing[pricing_agent: budget eval]
+  Reallocate[reallocate: choose category]
+  Synthesize[synthesize: assemble itinerary]
+  Cache[(Cache: Redis / in-memory)]
+  OwnService[Own Data Service]
+  Amadeus[Amadeus API]
+  Google[Google Places]
 
-  %% Backend orchestration
-  subgraph BACKEND ["Backend / Orchestrator"]
-    API --> Orchestrator["LangGraph Orchestrator\n(build_initial_state & stream)"]
-    Orchestrator --> Flight["flight_agent\n(Search flights)"]
-    Orchestrator --> Hotel["hotel_agent\n(Search hotels)"]
-    Orchestrator --> Activity["activity_agent\n(Plan activities)"]
-    Flight --> Pricing["pricing_agent\n(Evaluate budget)"]
-    Hotel --> Pricing
-    Activity --> Pricing
-    Pricing -->|within budget| Synthesize["synthesize\n(Assemble itinerary)"]
-    Pricing -->|over budget| Reallocate["reallocate\n(choose category to shrink)"]
-    Reallocate -->|flags flight| Flight
-    Reallocate -->|flags hotel| Hotel
-    Reallocate -->|flags activity| Activity
-    Synthesize -->|final_itinerary (itinerary_ready)| API
-    API -->|SSE events: node_complete, itinerary_ready, done, error| Client
-  end
+  Client -->|POST /plan-trip (SSE)| API
+  API --> Orchestrator
+  Orchestrator --> Flight
+  Orchestrator --> Hotel
+  Orchestrator --> Activity
+  Flight --> Pricing
+  Hotel --> Pricing
+  Activity --> Pricing
+  Pricing -->|within budget| Synthesize
+  Pricing -->|over budget| Reallocate
+  Reallocate --> Flight
+  Reallocate --> Hotel
+  Reallocate --> Activity
+  Synthesize -->|itinerary_ready (SSE)| API
+  API -->|SSE events: node_complete, itinerary_ready, done, error| Client
 
-  %% Data, cache and external services
-  subgraph DATA ["Data & Cache"]
-    Cache[(Cache\nRedis / In-memory)]
-    OwnService["Own Data Service\n(self-hosted: /flights, /hotels, /activities)"]
-    Amadeus["Amadeus API\n(flight/hotel)"]
-    Google["Google Places\n(activity search)"]
-  end
+  Flight --> Cache
+  Hotel --> Cache
+  Activity --> Cache
 
-  Flight -->|reads/writes| Cache
-  Hotel -->|reads/writes| Cache
-  Activity -->|reads/writes| Cache
-
-  Flight -->|primary: Own Service\nfallback: Amadeus| OwnService
-  Hotel -->|primary: Own Service\nfallback: Amadeus| OwnService
-  Activity -->|primary: Own Service\nfallback: Google Places| OwnService
-  Activity -->|fallback| Google
-  Flight -->|fallback| Amadeus
-  Hotel -->|fallback| Amadeus
-
-  Pricing -->|consults| Cache
-
-  %% Notes / annotations
-  note right of Reallocate
-    max_negotiation_rounds = 3 (default)
-    loop re-invokes only the flagged agent
-  end
-
-  note left of Cache
-    Price TTL ≈ PRICE_CACHE_TTL_SECONDS (default 900s)
-    Reference TTL ≈ REFERENCE_CACHE_TTL_SECONDS (default 86400s)
-  end
-
-  classDef external fill:#f9f,stroke:#333,stroke-width:1px;
-  class OwnService,Amadeus,Google external;
+  Flight --> OwnService
+  Hotel --> OwnService
+  Activity --> OwnService
+  Flight --> Amadeus
+  Hotel --> Amadeus
+  Activity --> Google
 ```
+
+Notes:
+
+- max_negotiation_rounds = 3 (default); reallocation loop re-invokes only the flagged agent.
+- Cache TTLs: PRICE_CACHE_TTL_SECONDS (default 900s), REFERENCE_CACHE_TTL_SECONDS (default 86400s).
+
 
 1. `POST /plan-trip` kicks off a LangGraph run: `flight_agent`, `hotel_agent`,
    and `activity_agent` execute in parallel.
