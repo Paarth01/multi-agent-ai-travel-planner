@@ -47,19 +47,19 @@ multi-agent-ai-travel-planner/
 
 ```mermaid
 flowchart TD
-  Client[Frontend UI]
-  API[FastAPI]
-  Orchestrator[LangGraph Orchestrator]
-  Flight[flight_agent]
-  Hotel[hotel_agent]
-  Activity[activity_agent]
-  Pricing[pricing_agent]
-  Reallocate[reallocate]
-  Synthesize[synthesize]
-  Cache[(Cache)]
-  OwnService[Own Service]
-  Amadeus[Amadeus]
-  Google[Google Places]
+  Client
+  API
+  Orchestrator
+  Flight
+  Hotel
+  Activity
+  Pricing
+  Reallocate
+  Synthesize
+  Cache
+  OwnService
+  Amadeus
+  Google
 
   Client --> API
   API --> Orchestrator
