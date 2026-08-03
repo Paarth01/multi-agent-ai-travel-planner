@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+*.egg-info/
+.venv/
+venv/
+.coverage
+htmlcov/
+
+# Frontend
+node_modules/
+dist/
+.env
+
+# OS
+.DS_Store
