@@ -13,6 +13,7 @@ Three-tier data source, tried in order:
 Falls through to the next tier on any failure, same rationale as
 flight_agent.py.
 """
+import logging
 import random
 from datetime import date
 
@@ -22,6 +23,7 @@ from config import settings
 from schemas.messages import AgentMessage, AgentID, TaskStatus, HotelOption
 from graph.state import TravelPlannerState
 
+logger = logging.getLogger(__name__)
 
 HOTEL_NAME_POOL = [
     "Beach Resort", "Boutique Stay", "Grand Palace Hotel",
@@ -140,6 +142,7 @@ def run_hotel_agent(state: TravelPlannerState) -> dict:
                     raise OwnHotelDataServiceError("Own service returned zero results")
                 data_source = "own_service"
             except OwnHotelDataServiceError:
+                logger.warning("Own hotel data service unavailable, falling back: %s", exc)
                 options = None
 
         # Tier 2: Amadeus (broader coverage, needs credentials)
