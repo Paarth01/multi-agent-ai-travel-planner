@@ -14,6 +14,7 @@ Three-tier data source, tried in order:
    estimated from price_level heuristics (not real prices).
 3. Mocked data generator — always available, zero setup.
 """
+import logging
 import random
 
 from clients.google_places_client import GooglePlacesClient, GooglePlacesAPIError
@@ -22,6 +23,7 @@ from config import settings
 from schemas.messages import AgentMessage, AgentID, TaskStatus, ActivitySuggestion
 from graph.state import TravelPlannerState
 
+logger = logging.getLogger(__name__)
 
 # category -> pool of (name, base_cost, duration_hours)
 ACTIVITY_POOL = {
@@ -181,7 +183,8 @@ def run_activity_agent(state: TravelPlannerState) -> dict:
             try:
                 activities = _live_search_activities_own_service(request.interests, request.destination, trip_days)
                 data_source = "own_service"
-            except OwnActivityDataServiceError:
+            except OwnActivityDataServiceError as exc:
+                logger.warning("Own activity data service unavailable, falling back: %s", exc)
                 activities = None
 
         # Tier 2: Google Places (broader coverage, needs credentials)
