@@ -5,8 +5,9 @@ Responsibilities:
 1. Evaluate the combined cost of current flight/hotel/activity picks
    against the trip's total budget.
 2. If over budget, flag exactly one category for reallocation: the one
-   with the largest variance (actual - allocated), since that's the
-   biggest lever to pull.
+   with the largest variance (actual - allocated), preferring
+   categories that aren't already "at floor" (see _floor_flags below)
+   since reallocating a floored category is a guaranteed no-op.
 3. Emit an AgentMessage documenting the evaluation for the audit log.
 """
 from schemas.messages import AgentMessage, AgentID, TaskStatus, BudgetLine
@@ -27,6 +28,24 @@ def compute_budget_breakdown(state: TravelPlannerState) -> list[BudgetLine]:
     ]
 
 
+def _floor_flags(state: TravelPlannerState) -> dict[str, bool]:
+    """
+    Per-category "already at its real/live cheapest option" flags, set
+    by each domain agent. Real data sources (own service, Amadeus)
+    don't accept a price ceiling as a search parameter, so re-querying
+    after a ceiling shrink can return the exact same result — these
+    flags let the pricing agent recognize a category has no cheaper
+    option to find, rather than burning negotiation rounds on it.
+    Defaults to False for any state that predates these fields (e.g.
+    states built without agents having run yet).
+    """
+    return {
+        "flight": state.get("flight_at_floor", False),
+        "hotel": state.get("hotel_at_floor", False),
+        "activity": state.get("activity_at_floor", False),
+    }
+
+
 def run_pricing_agent(state: TravelPlannerState) -> dict:
     breakdown = compute_budget_breakdown(state)
     total = sum(line.actual for line in breakdown)
@@ -34,18 +53,26 @@ def run_pricing_agent(state: TravelPlannerState) -> dict:
 
     reallocation_targets: list[str] = []
     if over_budget:
-        # Pick the single worst offender by variance (actual - allocated).
-        # Ties broken by category order: flight, hotel, activity.
-        worst = max(breakdown, key=lambda line: line.variance)
-        # Only flag it if it's actually over its own ceiling — if the
-        # overall total is over budget but every category individually
-        # is within its ceiling, that means ceilings themselves were set
-        # too generously relative to total budget. Flag the largest
-        # absolute-cost category instead so reallocation has something to shrink.
-        if worst.variance > 0:
+        floor_flags = _floor_flags(state)
+        over_ceiling_lines = [line for line in breakdown if line.variance > 0]
+
+        if over_ceiling_lines:
+            # Prefer a category that isn't already at its floor — only
+            # fall back to a floored category if every over-ceiling
+            # category is floored (nothing better to target).
+            non_floor_candidates = [line for line in over_ceiling_lines if not floor_flags.get(line.category, False)]
+            candidates = non_floor_candidates or over_ceiling_lines
+            worst = max(candidates, key=lambda line: line.variance)
             reallocation_targets = [worst.category]
         else:
-            largest_cost = max(breakdown, key=lambda line: line.actual)
+            # Total over budget but nothing individually over its own
+            # ceiling — ceilings have drifted (see build_initial_state's
+            # 40/40/20 split not summing to budget after prior rounds).
+            # Flag the largest absolute-cost category, same floor
+            # preference as above.
+            non_floor_all = [line for line in breakdown if not floor_flags.get(line.category, False)]
+            candidates = non_floor_all or breakdown
+            largest_cost = max(candidates, key=lambda line: line.actual)
             reallocation_targets = [largest_cost.category]
 
     message = AgentMessage(
@@ -117,6 +144,21 @@ def route_after_pricing(state: TravelPlannerState) -> str:
         return "synthesize"
     if state["negotiation_round"] >= state["max_negotiation_rounds"]:
         return "synthesize"  # give up gracefully, ship best-effort itinerary
+
+    # If every category currently over its ceiling is already at its
+    # real/live floor, further reallocation rounds are guaranteed
+    # no-ops — there's no cheaper option left to find. Stop early
+    # rather than burning rounds and duplicate network calls for a
+    # result that can't change. (Categories with real fixed data, e.g.
+    # activities backed by hand-curated ASI fees, are floored by
+    # definition — there's only ever one real price.)
+    breakdown = compute_budget_breakdown(state)
+    over_ceiling_categories = [line.category for line in breakdown if line.variance > 0]
+    if over_ceiling_categories:
+        floor_flags = _floor_flags(state)
+        if all(floor_flags.get(c, False) for c in over_ceiling_categories):
+            return "synthesize"
+
     return "reallocate"
 
 
