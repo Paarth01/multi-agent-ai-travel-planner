@@ -49,11 +49,20 @@ async def _stream_trip_plan(request: TripRequest, max_negotiation_rounds: int) -
         # for progress events.
         for step in _graph.stream(initial_state, stream_mode="updates"):
             for node_name, update in step.items():
+                # Each node returns its own AgentMessage(s) in message_log
+                # (merged into the accumulated log via the operator.add
+                # reducer) — pull data_source from the most recent one so
+                # the frontend can show whether this result came from the
+                # own data service, a third-party API, or mock fallback.
+                node_messages = update.get("message_log", [])
+                data_source = node_messages[-1].payload.get("data_source") if node_messages else None
+
                 yield _sse_event("node_complete", {
                     "node": node_name,
                     "status": update.get("status"),
                     "is_over_budget": update.get("is_over_budget"),
                     "negotiation_round": update.get("negotiation_round"),
+                    "data_source": data_source,
                 })
 
                 if node_name == "synthesize" and update.get("final_itinerary"):
