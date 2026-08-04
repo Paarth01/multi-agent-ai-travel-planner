@@ -2,20 +2,16 @@ FROM python:3.12-slim
 
 WORKDIR /app
 
-# Only install what the running app needs (skip pandas/fakeredis —
-# those are dev-only, for scripts/ and tests/ respectively).
-COPY requirements.txt .
+# Pinned directly rather than via `-c requirements.txt` — pip's
+# constraints-file mode rejects extras syntax like uvicorn[standard]
+# ("Constraints cannot have extras").
 RUN pip install --no-cache-dir \
-    fastapi uvicorn[standard] pydantic pydantic-settings langgraph httpx redis \
-    -c requirements.txt
+    fastapi==0.141.1 \
+    "uvicorn[standard]==0.52.0" \
+    pydantic==2.13.4
 
-COPY schemas/ schemas/
-COPY graph/ graph/
-COPY api/ api/
-COPY clients/ clients/
-COPY cache/ cache/
-COPY config.py .
+COPY data_service/ data_service/
 
-EXPOSE 8000
+EXPOSE 8100
 
-CMD ["uvicorn", "api.main:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["uvicorn", "data_service.app:app", "--host", "0.0.0.0", "--port", "8100"]
