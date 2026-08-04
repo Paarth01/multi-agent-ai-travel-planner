@@ -188,6 +188,7 @@ def run_hotel_agent(state: TravelPlannerState) -> dict:
             error=str(exc),
         )
         return {
-            "hotel_result": None,
+            "hotel_result": chosen,
             "message_log": [message],
+            "hotel_at_floor": not bool(within_budget),
         }
