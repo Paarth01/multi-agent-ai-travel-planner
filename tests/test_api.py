@@ -125,6 +125,24 @@ class TestPlanTripEndpoint:
         assert len(reallocate_events) <= 1
 
 
+    def test_node_complete_events_include_data_source(self):
+        """
+        Regression test for a real gap found during deployment: node_complete
+        events originally omitted data_source entirely, so there was no way
+        to tell from the API response whether a result came from the own
+        data service, a third-party API, or mock fallback.
+        """
+        response = client.post("/plan-trip", json=self._valid_payload())
+        events = parse_sse_events(response.text)
+
+        node_events = [e for e in events if e["event"] == "node_complete"]
+        domain_agent_events = [e for e in node_events if e["data"]["node"] in ("flight_agent", "hotel_agent", "activity_agent")]
+
+        assert len(domain_agent_events) == 3
+        for event in domain_agent_events:
+            assert event["data"]["data_source"] in ("own_service", "amadeus", "google_places", "mock")
+
+
 if __name__ == "__main__":
     import pytest
     sys.exit(pytest.main([__file__, "-v"]))
