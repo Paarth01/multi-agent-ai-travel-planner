@@ -228,6 +228,7 @@ def run_activity_agent(state: TravelPlannerState) -> dict:
             error=str(exc),
         )
         return {
-            "activity_results": [],
+            "activity_results": activities,
             "message_log": [message],
+            "activity_at_floor": total_cost > ceiling,
         }
