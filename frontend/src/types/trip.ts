@@ -71,6 +71,7 @@ export interface NodeCompleteEvent {
   status: string | null;
   is_over_budget: boolean | null;
   negotiation_round: number | null;
+  data_source: "own_service" | "amadeus" | "google_places" | "mock" | null;
 }
 
 export type SSEEventType = "node_complete" | "itinerary_ready" | "done" | "error";
