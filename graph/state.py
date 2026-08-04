@@ -37,6 +37,18 @@ class TravelPlannerState(TypedDict):
     negotiation_round: int
     max_negotiation_rounds: int
 
+    # Set by each domain agent when its cheapest available real/live
+    # option is still over its ceiling (mirrors confidence < 1.0 on
+    # that agent's AgentMessage). Real data sources (own service,
+    # Amadeus) don't accept a price ceiling as a search parameter, so
+    # re-querying after a ceiling shrink can return the exact same
+    # "cheapest available" result — these flags let the pricing agent
+    # recognize that and avoid burning negotiation rounds on a category
+    # that has no cheaper option to find.
+    flight_at_floor: bool
+    hotel_at_floor: bool
+    activity_at_floor: bool
+
     # Terminal output
     final_itinerary: Optional[dict]
     status: str  # "planning" | "negotiating" | "complete" | "failed"
@@ -69,6 +81,9 @@ def build_initial_state(request: TripRequest, max_negotiation_rounds: int = 3) -
         reallocation_targets=[],
         negotiation_round=0,
         max_negotiation_rounds=max_negotiation_rounds,
+        flight_at_floor=False,
+        hotel_at_floor=False,
+        activity_at_floor=False,
         final_itinerary=None,
         status="planning",
     )
