@@ -13,6 +13,7 @@ Falls through to the next tier on any failure (missing config, no
 coverage for the route, network error), so the app never fails a trip
 plan just because one upstream provider had a bad day.
 """
+import logging
 import random
 from datetime import date, datetime, timedelta
 
@@ -21,6 +22,8 @@ from clients.own_flight_data_client import OwnFlightDataClient, OwnDataServiceEr
 from config import settings
 from schemas.messages import AgentMessage, AgentID, TaskStatus, FlightOption
 from graph.state import TravelPlannerState
+
+logger = logging.getLogger(__name__)
 
 
 AIRLINES = ["IndiGo", "Air India", "SpiceJet", "Vistara", "Akasa Air"]
@@ -142,8 +145,9 @@ def run_flight_agent(state: TravelPlannerState) -> dict:
                 if not options:
                     raise OwnDataServiceError("Own service returned zero results")
                 data_source = "own_service"
-            except OwnDataServiceError:
-                options = None
+            except OwnDataServiceError as exc:
+                  logger.warning("Own flight data service unavailable, falling back: %s", exc)
+                  options = None
 
         # Tier 2: Amadeus (broader coverage, needs credentials)
         if options is None and settings.amadeus_configured:
