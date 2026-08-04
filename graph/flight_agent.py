@@ -192,6 +192,7 @@ def run_flight_agent(state: TravelPlannerState) -> dict:
             error=str(exc),
         )
         return {
-            "flight_result": None,
+            "flight_result": chosen,
             "message_log": [message],
+            "flight_at_floor": not bool(within_budget),
         }
