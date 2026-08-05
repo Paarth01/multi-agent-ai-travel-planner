@@ -25,7 +25,7 @@ from graph.state import TravelPlannerState
 
 logger = logging.getLogger(__name__)
 
-# category -> pool of (name, base_cost, duration_hours)
+
 ACTIVITY_POOL = {
     "beaches": [
         ("Water sports session", 1500, 3), ("Sunset beach walk", 0, 1.5),
@@ -75,12 +75,6 @@ def _get_own_data_client() -> OwnActivityDataClient:
 
 
 def _estimate_cost_from_price_level(price_level: int | None) -> float:
-    """
-    Google Places' price_level is a 0-4 scale with no currency attached.
-    Mapping to an approximate INR cost so the pricing agent has a number
-    to negotiate with. This is a rough heuristic, not real pricing —
-    swap for a real pricing/booking API if this needs to be accurate.
-    """
     if price_level is None:
         return 500.0
     return {0: 0.0, 1: 300.0, 2: 800.0, 3: 1800.0, 4: 3500.0}.get(price_level, 500.0)
@@ -90,9 +84,6 @@ def _live_search_activities_own_service(
     interests: list[str], destination: str, trip_days: int
 ) -> list[ActivitySuggestion]:
     client = _get_own_data_client()
-    # Single call for the whole city (no category filter), then filter
-    # locally against the user's interests — cheaper than one call per
-    # interest, and lets us see the full real coverage for this city.
     raw_results = client.search_activities(destination)
     matched = [r for r in raw_results if r["category"] in interests] if interests else raw_results
 
@@ -127,7 +118,7 @@ def _live_search_activities_google(interests: list[str], destination: str, trip_
                 category=interest,
                 day=((day - 1) % max(trip_days, 1)) + 1,
                 estimated_cost=_estimate_cost_from_price_level(place.get("price_level")),
-                duration_hours=2.0,  # Places doesn't return this; reasonable default
+                duration_hours=2.0,
             ))
             day += 1
 
@@ -152,7 +143,6 @@ def _mock_search_activities(interests: list[str], trip_days: int, budget_ceiling
             ))
             day += 1
 
-    # Greedily fill within the ceiling, cheapest first, capped at 2 per day
     candidates.sort(key=lambda a: a.estimated_cost)
     selected: list[ActivitySuggestion] = []
     running_total = 0.0
@@ -162,12 +152,12 @@ def _mock_search_activities(interests: list[str], trip_days: int, budget_ceiling
         if per_day_count.get(activity.day, 0) >= 2:
             continue
         if running_total + activity.estimated_cost > budget_ceiling and selected:
-            continue  # skip if it would blow the ceiling, unless we have nothing yet
+            continue
         selected.append(activity)
         running_total += activity.estimated_cost
         per_day_count[activity.day] = per_day_count.get(activity.day, 0) + 1
 
-    return selected or candidates[:1]  # guarantee at least one suggestion
+    return selected or candidates[:1]
 
 
 def run_activity_agent(state: TravelPlannerState) -> dict:
@@ -178,7 +168,6 @@ def run_activity_agent(state: TravelPlannerState) -> dict:
     activities = None
 
     try:
-        # Tier 1: own data service (real fees, narrow coverage — 4 cities, 2 categories)
         if settings.own_activity_service_configured:
             try:
                 activities = _live_search_activities_own_service(request.interests, request.destination, trip_days)
@@ -187,7 +176,6 @@ def run_activity_agent(state: TravelPlannerState) -> dict:
                 logger.warning("Own activity data service unavailable, falling back: %s", exc)
                 activities = None
 
-        # Tier 2: Google Places (broader coverage, needs credentials)
         if activities is None and settings.google_places_configured:
             try:
                 activities = _live_search_activities_google(request.interests, request.destination, trip_days)
@@ -197,7 +185,6 @@ def run_activity_agent(state: TravelPlannerState) -> dict:
             except GooglePlacesAPIError:
                 activities = None
 
-        # Tier 3: mock (always available)
         if activities is None:
             activities = _mock_search_activities(request.interests, trip_days, ceiling)
             data_source = "mock"
@@ -220,9 +207,10 @@ def run_activity_agent(state: TravelPlannerState) -> dict:
         return {
             "activity_results": activities,
             "message_log": [message],
+            "activity_at_floor": total_cost > ceiling,
         }
 
-    except Exception as exc:  # pragma: no cover
+    except Exception as exc:
         message = AgentMessage(
             agent_id=AgentID.ACTIVITY,
             task_type="search_activities",
@@ -231,7 +219,6 @@ def run_activity_agent(state: TravelPlannerState) -> dict:
             error=str(exc),
         )
         return {
-            "activity_results": activities,
+            "activity_results": [],
             "message_log": [message],
-            "activity_at_floor": total_cost > ceiling,
         }
