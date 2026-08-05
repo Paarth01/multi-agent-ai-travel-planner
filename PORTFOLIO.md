@@ -4,6 +4,21 @@ Different lengths for different places. Pick what fits.
 
 ---
 
+## Live links
+
+- **Live demo:** https://multi-agent-ai-travel-planner-rho.vercel.app
+- **GitHub:** https://github.com/Paarth01/multi-agent-ai-travel-planner
+- **API (backend, for reference — not meant to be browsed directly):** https://tripsync-api-f3gb.onrender.com
+- **Data service (backend, for reference):** https://tripsync-data-service.onrender.com
+
+Note: the backend services are on Render's free tier and spin down
+after 15 minutes of inactivity — the first request after idle time can
+take 30-60s to wake up. Worth a one-line heads-up if you're sending
+this link to someone ("first load might be slow, it's a free-tier
+cold start, not a bug").
+
+---
+
 ## GitHub repo setup
 
 **Repo name:** `multi-agent-ai-travel-planner`
@@ -11,7 +26,7 @@ Different lengths for different places. Pick what fits.
 project's display name in the README's H1, not the repo name itself)
 
 **Description** (GitHub "About" field):
-> Multi-agent AI travel planner built with LangGraph — 4 specialized agents (flight, hotel, activity, pricing) coordinate in real time via a budget negotiation loop. FastAPI + SSE backend, React/TypeScript frontend, real Indian travel pricing datasets, 119 tests.
+> Multi-agent AI travel planner built with LangGraph — 4 specialized agents (flight, hotel, activity, pricing) coordinate in real time via a budget negotiation loop. FastAPI + SSE backend, React/TypeScript frontend, real Indian travel pricing datasets, 126 tests. Live demo: multi-agent-ai-travel-planner-rho.vercel.app
 
 **Topics** (add via the gear icon next to "About"):
 ```
@@ -40,7 +55,7 @@ real-time
 - Designed a 3-tier data-sourcing strategy (self-hosted real datasets → third-party APIs → synthetic fallback) so the system degrades gracefully instead of failing when any single data provider is unavailable, rate-limited, or unconfigured
 - Sourced and aggregated a 300K-row real-world flight pricing dataset and a 134K-row hotel booking dataset into a self-hosted FastAPI microservice, reducing external API dependency to zero for the primary demo path
 - Implemented a Redis-backed caching layer (with automatic in-memory fallback) across all live data sources, using cache keys scoped to search parameters rather than budget state — so repeated queries during the negotiation loop are served from cache without going stale on price changes
-- Built the full stack: FastAPI + Server-Sent Events streaming backend, React/TypeScript/Tailwind frontend consuming the live event stream, 119 automated tests across unit, integration, and API layers
+- Built the full stack: FastAPI + Server-Sent Events streaming backend, React/TypeScript/Tailwind frontend consuming the live event stream, 126 automated tests across unit, integration, and API layers
 
 ---
 
@@ -104,7 +119,7 @@ what budget filtering happens downstream. The alternative (caching the
 final filtered pick) would be simpler but wouldn't reflect how real
 travel APIs are actually queried.
 
-**If asked about testing:** 119 tests, deliberately including tests
+**If asked about testing:** 126 tests, deliberately including tests
 that caught real bugs during development — not just tests written to
 pass. Two examples: a test asserting "every category respects its own
 ceiling" caught an edge case where ceilings had drifted after prior
@@ -112,6 +127,37 @@ reallocation rounds and no longer summed to the total budget; a test
 on the live-API fallback logic caught a bug where a data source was
 marked "live" before confirming the live call actually returned
 results, so an empty response silently reported the wrong source.
+
+**The strongest story, if there's time for it — a real production
+debugging session during deployment:** after deploying to Render, live
+testing showed the negotiation loop burning all 3 rounds on a hotel
+search even though the real hotel price never changed between rounds.
+Root cause: neither the self-hosted data service nor Amadeus accept a
+price ceiling as a search parameter — they only take city/dates — so
+shrinking the ceiling and re-querying returned the exact same
+"cheapest available" result every time. Fixed it by having each agent
+flag when its cheapest available option is already at its real-data
+floor, so the pricing agent can recognize a category has no cheaper
+option to find and skip straight to a "best effort" itinerary instead
+of wasting rounds and duplicate network calls.
+
+The interesting part for an interview isn't the fix itself, though —
+it's what happened *verifying* it. The first "confirmation" test still
+showed the old 3-round behavior after redeploying. Rather than assume
+the fix was wrong, the deploy pipeline was checked directly (diffing
+GitHub's actual file contents against the intended fix) — which
+revealed an AI coding assistant (Copilot) had applied the described
+change to the *wrong* return block: it added the new field to the
+exception-handling path instead of the success path, and even
+introduced a latent `NameError` in the process by swapping `None` for
+a variable that didn't exist in that scope. The bug was invisible from
+reading the diff casually — it only showed up by diffing actual
+deployed file content byte-for-byte against intent, and by reproducing
+the exact scenario locally with `graph.stream()` tracing to watch
+state field-by-field. That's a genuinely good story about not trusting
+"looks right" and verifying against ground truth instead — especially
+relevant now that AI-assisted coding is common and can introduce
+subtle, syntactically-valid-but-semantically-wrong changes.
 
 ---
 
