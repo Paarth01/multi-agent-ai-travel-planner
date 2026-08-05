@@ -25,14 +25,13 @@ from graph.state import TravelPlannerState
 
 logger = logging.getLogger(__name__)
 
+
 HOTEL_NAME_POOL = [
     "Beach Resort", "Boutique Stay", "Grand Palace Hotel",
     "Harbor View Inn", "The Local Homestay", "Skyline Suites",
 ]
 AREA_POOL = ["Old Town", "Beachfront", "City Center", "Near Airport", "Hillside"]
 
-# Same reasoning as MIN_FLIGHT_PRICE in flight_agent.py — a real room
-# never actually costs ₹20/night just because the ceiling shrank.
 MIN_PRICE_PER_NIGHT = 800.0
 
 _amadeus_client: AmadeusClient | None = None
@@ -63,20 +62,14 @@ def _get_own_data_client() -> OwnHotelDataClient:
 
 def _map_amadeus_hotel_offer(offer: dict, nights: int) -> HotelOption:
     hotel = offer["hotel"]
-    # Amadeus v3 hotel-offers can return multiple room offers per
-    # hotel; take the cheapest one.
     cheapest_offer = min(offer["offers"], key=lambda o: float(o["price"]["total"]))
     total_price = float(cheapest_offer["price"]["total"])
 
     return HotelOption(
         name=hotel.get("name", "Unknown Hotel"),
-        # Amadeus's hotel-offers endpoint doesn't return neighborhood/area
-        # data — that lives in a separate Hotel Content API call we're not
-        # making here to keep this to one round trip. Falls back to city name.
         area=hotel.get("cityCode", "City Center"),
         price_per_night=round(total_price / max(nights, 1), 2),
         total_price=round(total_price, 2),
-        # Amadeus doesn't return a star/user rating on this endpoint either.
         rating=None,
         amenities=[a.lower() for a in cheapest_offer.get("room", {}).get("typeEstimated", {}).get("category", "").split("_") if a],
     )
@@ -134,18 +127,16 @@ def run_hotel_agent(state: TravelPlannerState) -> dict:
     options = None
 
     try:
-        # Tier 1: own data service (real stats, no rate limits, Indian metros only)
         if settings.own_hotel_service_configured:
             try:
                 options = _live_search_hotels_own_service(request.destination, nights)
                 if not options:
                     raise OwnHotelDataServiceError("Own service returned zero results")
                 data_source = "own_service"
-            except OwnHotelDataServiceError:
+            except OwnHotelDataServiceError as exc:
                 logger.warning("Own hotel data service unavailable, falling back: %s", exc)
                 options = None
 
-        # Tier 2: Amadeus (broader coverage, needs credentials)
         if options is None and settings.amadeus_configured:
             try:
                 options = _live_search_hotels_amadeus(request.destination, request.start_date, request.end_date, nights)
@@ -155,7 +146,6 @@ def run_hotel_agent(state: TravelPlannerState) -> dict:
             except AmadeusAPIError:
                 options = None
 
-        # Tier 3: mock (always available)
         if options is None:
             options = _mock_search_hotels(request.destination, nights, ceiling)
             data_source = "mock"
@@ -180,9 +170,10 @@ def run_hotel_agent(state: TravelPlannerState) -> dict:
         return {
             "hotel_result": chosen,
             "message_log": [message],
+            "hotel_at_floor": not bool(within_budget),
         }
 
-    except Exception as exc:  # pragma: no cover
+    except Exception as exc:
         message = AgentMessage(
             agent_id=AgentID.HOTEL,
             task_type="search_hotels",
@@ -191,7 +182,6 @@ def run_hotel_agent(state: TravelPlannerState) -> dict:
             error=str(exc),
         )
         return {
-            "hotel_result": chosen,
+            "hotel_result": None,
             "message_log": [message],
-            "hotel_at_floor": not bool(within_budget),
         }
