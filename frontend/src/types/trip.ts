@@ -53,6 +53,7 @@ export interface BudgetLine {
 }
 
 export interface Itinerary {
+  id?: string;
   trip_request: TripRequest;
   flight: FlightOption | null;
   hotel: HotelOption | null;
@@ -64,6 +65,16 @@ export interface Itinerary {
   generated_at: string;
 }
 
+export interface SavedTripSummary {
+  id: string;
+  destination: string;
+  origin: string;
+  start_date: string;
+  end_date: string;
+  total_cost: number;
+  best_effort: boolean;
+  created_at: string;
+}
 // ---- SSE event payloads from POST /plan-trip ----
 
 export interface NodeCompleteEvent {

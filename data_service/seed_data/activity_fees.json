@@ -41,6 +41,22 @@
         "entry_fee_foreign_inr": 0,
         "duration_hours": 1.0,
         "authority": "Bahá'í community (free entry)"
+      },
+      {
+        "name": "Lodhi Garden",
+        "category": "nature",
+        "entry_fee_inr": 0,
+        "entry_fee_foreign_inr": 0,
+        "duration_hours": 1.5,
+        "authority": "NDMC (free entry)"
+      },
+      {
+        "name": "National Zoological Park",
+        "category": "nature",
+        "entry_fee_inr": 80,
+        "entry_fee_foreign_inr": 400,
+        "duration_hours": 3.0,
+        "authority": "Ministry of Environment, Forest and Climate Change"
       }
     ],
     "Mumbai": [
@@ -67,6 +83,14 @@
         "entry_fee_foreign_inr": 700,
         "duration_hours": 2.5,
         "authority": "Chhatrapati Shivaji Maharaj Vastu Sangrahalaya (source prices vary Rs60-200, used most recent)"
+      },
+      {
+        "name": "Sanjay Gandhi National Park",
+        "category": "nature",
+        "entry_fee_inr": 48,
+        "entry_fee_foreign_inr": 48,
+        "duration_hours": 4.0,
+        "authority": "Forest Department, Maharashtra"
       }
     ],
     "Bangalore": [
@@ -103,6 +127,90 @@
         "entry_fee_foreign_inr": 300,
         "duration_hours": 1.0,
         "authority": "ASI (cashless: Rs20/Rs250)"
+      },
+      {
+        "name": "KBR National Park",
+        "category": "nature",
+        "entry_fee_inr": 25,
+        "entry_fee_foreign_inr": 25,
+        "duration_hours": 2.0,
+        "authority": "Forest Department, Telangana"
+      },
+      {
+        "name": "Nehru Zoological Park",
+        "category": "nature",
+        "entry_fee_inr": 60,
+        "entry_fee_foreign_inr": 60,
+        "duration_hours": 3.0,
+        "authority": "Forest Department, Telangana"
+      }
+    ],
+    "Chennai": [
+      {
+        "name": "Fort St. George",
+        "category": "history",
+        "entry_fee_inr": 25,
+        "entry_fee_foreign_inr": 300,
+        "duration_hours": 1.5,
+        "authority": "ASI"
+      },
+      {
+        "name": "Government Museum",
+        "category": "history",
+        "entry_fee_inr": 15,
+        "entry_fee_foreign_inr": 250,
+        "duration_hours": 2.5,
+        "authority": "Government of Tamil Nadu"
+      },
+      {
+        "name": "Kapaleeshwarar Temple",
+        "category": "history",
+        "entry_fee_inr": 0,
+        "entry_fee_foreign_inr": 0,
+        "duration_hours": 1.0,
+        "authority": "HR&CE Department (free entry)"
+      },
+      {
+        "name": "Mahabalipuram Shore Temple",
+        "category": "history",
+        "entry_fee_inr": 40,
+        "entry_fee_foreign_inr": 600,
+        "duration_hours": 2.0,
+        "authority": "ASI"
+      }
+    ],
+    "Kolkata": [
+      {
+        "name": "Victoria Memorial",
+        "category": "history",
+        "entry_fee_inr": 30,
+        "entry_fee_foreign_inr": 500,
+        "duration_hours": 2.0,
+        "authority": "Ministry of Culture, Govt of India"
+      },
+      {
+        "name": "Indian Museum",
+        "category": "history",
+        "entry_fee_inr": 75,
+        "entry_fee_foreign_inr": 500,
+        "duration_hours": 3.0,
+        "authority": "Ministry of Culture, Govt of India"
+      },
+      {
+        "name": "Marble Palace",
+        "category": "history",
+        "entry_fee_inr": 0,
+        "entry_fee_foreign_inr": 0,
+        "duration_hours": 1.5,
+        "authority": "Private Trust (free entry, permit required)"
+      },
+      {
+        "name": "Howrah Bridge",
+        "category": "history",
+        "entry_fee_inr": 0,
+        "entry_fee_foreign_inr": 0,
+        "duration_hours": 0.5,
+        "authority": "Public infrastructure (free entry)"
       }
     ]
   }

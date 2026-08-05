@@ -74,7 +74,7 @@ export function TripRequestForm({ onSubmit, isSubmitting }: TripRequestFormProps
   };
 
   const inputClass = (hasError?: string) =>
-    `w-full pl-10 pr-4 py-3 rounded-lg border outline-none transition-all text-body-md bg-white ${
+    `w-full pl-10 pr-4 py-3 rounded-lg border outline-none transition-all text-body-md bg-surface-container-lowest ${
       hasError
         ? "border-secondary focus:border-secondary focus:ring-1 focus:ring-secondary"
         : "border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary"
@@ -85,7 +85,7 @@ export function TripRequestForm({ onSubmit, isSubmitting }: TripRequestFormProps
       <div className="absolute top-[-10%] left-[-5%] w-[40rem] h-[40rem] bg-primary/5 rounded-full blur-[100px] -z-10" />
       <div className="absolute bottom-[-10%] right-[-5%] w-[35rem] h-[35rem] bg-secondary/5 rounded-full blur-[100px] -z-10" />
 
-      <div className="w-full max-w-[640px] bg-white rounded-xl card-shadow p-lg md:p-xl animate-fade-scale-in">
+      <div className="w-full max-w-[640px] bg-surface-container-lowest rounded-xl card-shadow p-lg md:p-xl animate-fade-scale-in">
         <div className="border-b border-surface-variant pb-md mb-xl">
           <h1 className="text-headline-lg text-on-surface mb-xs">Where next?</h1>
           <p className="text-body-md text-on-surface-variant">

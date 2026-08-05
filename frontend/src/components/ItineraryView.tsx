@@ -75,7 +75,7 @@ export function ItineraryView({ itinerary, onPlanAnother }: ItineraryViewProps) 
           </p>
         </div>
 
-        <div className="bg-white rounded-xl card-shadow border border-surface-variant p-lg min-w-[260px] animate-fade-scale-in">
+        <div className="bg-surface-container-lowest rounded-xl card-shadow border border-surface-variant p-lg min-w-[260px] animate-fade-scale-in">
           <div className="flex items-center justify-between mb-xs">
             <span className="text-label-sm text-on-surface-variant uppercase tracking-wide">Total Est. Cost</span>
             {best_effort ? (
@@ -101,7 +101,7 @@ export function ItineraryView({ itinerary, onPlanAnother }: ItineraryViewProps) 
       </div>
 
       {/* Budget breakdown */}
-      <section className="bg-white rounded-xl card-shadow border border-surface-variant p-lg mb-xl">
+      <section className="bg-surface-container-lowest rounded-xl card-shadow border border-surface-variant p-lg mb-xl">
         <div className="flex items-center justify-between mb-md">
           <h2 className="text-label-md text-on-surface uppercase tracking-wide">Budget Allocation</h2>
           <div className="flex gap-md">
@@ -130,7 +130,7 @@ export function ItineraryView({ itinerary, onPlanAnother }: ItineraryViewProps) 
         {/* Flight + Hotel */}
         <div className="space-y-lg">
           {flight && (
-            <div className="bg-white rounded-xl card-shadow border border-surface-variant overflow-hidden">
+            <div className="bg-surface-container-lowest rounded-xl card-shadow border border-surface-variant overflow-hidden">
               <div className="bg-surface-container-low px-lg py-md flex items-center justify-between">
                 <span className="text-label-md text-primary uppercase tracking-wide">Flight Details</span>
                 <span className="material-symbols-outlined text-primary">flight</span>
@@ -158,7 +158,7 @@ export function ItineraryView({ itinerary, onPlanAnother }: ItineraryViewProps) 
           )}
 
           {hotel && (
-            <div className="bg-white rounded-xl card-shadow border border-surface-variant overflow-hidden">
+            <div className="bg-surface-container-lowest rounded-xl card-shadow border border-surface-variant overflow-hidden">
               <div className="p-lg">
                 <div className="flex items-center justify-between mb-xs">
                   <h3 className="text-label-md text-on-surface">{hotel.name}</h3>
@@ -188,7 +188,7 @@ export function ItineraryView({ itinerary, onPlanAnother }: ItineraryViewProps) 
         </div>
 
         {/* Daily itinerary */}
-        <section className="bg-white rounded-xl card-shadow border border-surface-variant p-lg">
+        <section className="bg-surface-container-lowest rounded-xl card-shadow border border-surface-variant p-lg">
           <h2 className="text-headline-md text-on-surface mb-lg">Daily Itinerary &amp; Activities</h2>
           <div className="space-y-xl">
             {Object.entries(activitiesByDay)

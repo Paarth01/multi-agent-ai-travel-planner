@@ -45,6 +45,37 @@ multi-agent-ai-travel-planner/
 
 ## How it works
 
+```mermaid
+graph TD
+    Client([Client Request]) --> Orchestrator{LangGraph}
+    
+    Orchestrator -->|Parallel Search| FA[Flight Agent]
+    Orchestrator -->|Parallel Search| HA[Hotel Agent]
+    Orchestrator -->|Parallel Search| AA[Activity Agent]
+    
+    FA --> PA{Pricing Agent}
+    HA --> PA
+    AA --> PA
+    
+    PA -->|Cost > Budget| Realloc[Reallocate Node]
+    Realloc -.->|Tighten Budget Ceiling| FA
+    Realloc -.->|Tighten Budget Ceiling| HA
+    Realloc -.->|Tighten Budget Ceiling| AA
+    
+    PA -->|Budget Met / Max Rounds| Synth[Synthesize Itinerary]
+    Synth --> DB[(SQLite Database)]
+    Synth --> End([Return Final Itinerary])
+    
+    classDef default fill:#f9f9f9,stroke:#333,stroke-width:2px;
+    classDef agent fill:#e6f3ff,stroke:#0066cc;
+    classDef logic fill:#fff3e6,stroke:#ff9900;
+    classDef endnode fill:#e6ffe6,stroke:#00cc00;
+    
+    class FA,HA,AA agent;
+    class PA,Realloc logic;
+    class Synth,DB,End endnode;
+```
+
 1. `POST /plan-trip` kicks off a LangGraph run: `flight_agent`, `hotel_agent`,
    and `activity_agent` execute in parallel.
 2. `pricing_agent` evaluates the combined cost. If over budget, it flags the
@@ -57,6 +88,7 @@ multi-agent-ai-travel-planner/
 5. Progress streams to the frontend as Server-Sent Events the whole way, so
    the UI can show each agent moving through
    `waiting → searching → found / reallocating` live.
+6. Upon completion, the finalized itinerary is persisted to a local SQLite database (`tripsync.db`) and its ID is returned in the `itinerary_ready` event, allowing users to revisit saved trips in the UI.
 
 ## Running the backend
 
@@ -178,14 +210,6 @@ to the live agent-progress UI.
 
 ## Known gaps / next steps
 
-- No auth, no persistence — itineraries aren't saved anywhere yet.
-- Dark mode design exists in the Stitch export but isn't wired into the
-  frontend's Tailwind config yet.
-- CORS is wide open (`*`) for local dev — tighten before deploying.
-- In-memory cache (the default) isn't shared across worker processes —
-  fine for a single `uvicorn` process, but a multi-worker deployment
-  would need `REDIS_URL` set for the cache to actually help.
-- Activity fee data is hand-curated and narrow (4 cities, 2 categories)
-  — no clean bulk dataset exists for this the way it does for flights/
-  hotels. See `data_service/README.md` for why, and for how to extend
-  it if you find/verify more real fee data.
+- **Authentication**: Users currently share a single local SQLite database. Multi-user authentication needs to be implemented to isolate trip data.
+- **Cache Scaling**: In-memory cache (the default) isn't shared across worker processes — fine for a single `uvicorn` process, but a multi-worker deployment would need `REDIS_URL` set for the cache to actually help.
+- **Data Coverage**: While the activity fee data has been expanded to 6 major Indian cities (Delhi, Mumbai, Hyderabad, Bengaluru, Chennai, Kolkata), it remains hand-curated and narrow (mostly history/nature). No clean bulk dataset exists for this yet. See `data_service/README.md` for how to extend it.

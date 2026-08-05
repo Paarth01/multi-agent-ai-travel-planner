@@ -143,6 +143,44 @@ class TestPlanTripEndpoint:
             assert event["data"]["data_source"] in ("own_service", "amadeus", "google_places", "mock")
 
 
+class TestPersistenceEndpoints:
+    def test_list_and_delete_trips(self):
+        # Trigger a trip plan to save one
+        payload = {
+            "destination": "Goa",
+            "origin": "Delhi",
+            "start_date": "2026-12-20",
+            "end_date": "2026-12-25",
+            "budget": 40000.0,
+            "interests": ["beaches", "nightlife"],
+        }
+        response = client.post("/plan-trip", json=payload)
+        events = parse_sse_events(response.text)
+        
+        itinerary_event = next(e for e in events if e["event"] == "itinerary_ready")
+        trip_id = itinerary_event["data"].get("id")
+        assert trip_id is not None
+        
+        # Test GET /trips
+        list_response = client.get("/trips")
+        assert list_response.status_code == 200
+        trips = list_response.json()
+        assert len(trips) > 0
+        assert trips[0]["id"] == trip_id
+        
+        # Test GET /trips/{id}
+        get_response = client.get(f"/trips/{trip_id}")
+        assert get_response.status_code == 200
+        assert get_response.json()["id"] == trip_id
+        
+        # Test DELETE /trips/{id}
+        del_response = client.delete(f"/trips/{trip_id}")
+        assert del_response.status_code == 200
+        
+        # Verify deleted
+        assert client.get(f"/trips/{trip_id}").status_code == 404
+        assert client.delete(f"/trips/{trip_id}").status_code == 404
+
 if __name__ == "__main__":
     import pytest
     sys.exit(pytest.main([__file__, "-v"]))

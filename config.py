@@ -54,11 +54,18 @@ class Settings(BaseSettings):
     # is fine for local dev; set explicitly before deploying.
     cors_allowed_origins: str = "*"
 
+    # Persistence — SQLite for saved itineraries, zero-setup default.
+    sqlite_db_path: str = "tripsync.db"
+
     @property
     def cors_allowed_origins_list(self) -> list[str]:
         if self.cors_allowed_origins.strip() == "*":
             return ["*"]
         return [origin.strip() for origin in self.cors_allowed_origins.split(",") if origin.strip()]
+
+    @property
+    def cors_is_wildcard(self) -> bool:
+        return self.cors_allowed_origins.strip() == "*"
 
     @property
     def own_flight_service_configured(self) -> bool:

@@ -6,7 +6,7 @@ interface PlanningErrorProps {
 export function PlanningError({ message, onRetry }: PlanningErrorProps) {
   return (
     <main className="flex-grow flex items-center justify-center py-xl px-margin-mobile md:px-margin-desktop">
-      <div className="w-full max-w-[480px] bg-white rounded-xl card-shadow border border-error-container p-xl text-center animate-fade-scale-in">
+      <div className="w-full max-w-[480px] bg-surface-container-lowest rounded-xl card-shadow border border-error-container p-xl text-center animate-fade-scale-in">
         <div className="w-14 h-14 rounded-full bg-error-container/60 flex items-center justify-center mx-auto mb-md">
           <span className="material-symbols-outlined text-error text-[28px]">error</span>
         </div>
