@@ -22,6 +22,7 @@ COPY api/ api/
 COPY clients/ clients/
 COPY cache/ cache/
 COPY config.py .
+COPY storage.py .
 
 EXPOSE 8000
 
