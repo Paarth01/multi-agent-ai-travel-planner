@@ -47,33 +47,32 @@ multi-agent-ai-travel-planner/
 
 ```mermaid
 graph TD
-    Client([Client Request]) --> Orchestrator{LangGraph}
+    Client([Client Request]) --> InitState[Initialize State]
+    InitState --> FA[Flight Agent]
+    InitState --> HA[Hotel Agent]
+    InitState --> AA[Activity Agent]
     
-    Orchestrator -->|Parallel Search| FA[Flight Agent]
-    Orchestrator -->|Parallel Search| HA[Hotel Agent]
-    Orchestrator -->|Parallel Search| AA[Activity Agent]
+    subgraph "Data Retrieval & Caching"
+        FA -.-> Cache[(Cache)]
+        HA -.-> Cache
+        AA -.-> Cache
+        Cache -. Miss .-> APIs[Live APIs: Amadeus / Google / Own Service]
+    end
     
     FA --> PA{Pricing Agent}
     HA --> PA
     AA --> PA
     
-    PA -->|Cost > Budget| Realloc[Reallocate Node]
-    Realloc -.->|Tighten Budget Ceiling| FA
-    Realloc -.->|Tighten Budget Ceiling| HA
-    Realloc -.->|Tighten Budget Ceiling| AA
+    PA -->|Cost Exceeds Budget| Realloc[Reallocate Budget]
+    Realloc -->|Identify Variance & Shrink Ceiling| Cond{Conditional Routing}
     
-    PA -->|Budget Met / Max Rounds| Synth[Synthesize Itinerary]
-    Synth --> DB[(SQLite Database)]
-    Synth --> End([Return Final Itinerary])
+    Cond -.->|Re-invoke Flight| FA
+    Cond -.->|Re-invoke Hotel| HA
+    Cond -.->|Re-invoke Activity| AA
     
-    classDef default fill:#f9f9f9,stroke:#333,stroke-width:2px;
-    classDef agent fill:#e6f3ff,stroke:#0066cc;
-    classDef logic fill:#fff3e6,stroke:#ff9900;
-    classDef endnode fill:#e6ffe6,stroke:#00cc00;
-    
-    class FA,HA,AA agent;
-    class PA,Realloc logic;
-    class Synth,DB,End endnode;
+    PA -->|Budget Met OR Max Rounds| Synth[Synthesize Itinerary]
+    Synth --> DB[(Save to SQLite Database)]
+    DB --> End([SSE Stream: itinerary_ready])
 ```
 
 1. `POST /plan-trip` kicks off a LangGraph run: `flight_agent`, `hotel_agent`,
