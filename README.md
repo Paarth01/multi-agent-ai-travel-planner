@@ -37,63 +37,13 @@ multi-agent-ai-travel-planner/
 │   ├── build_flight_seed.py    Regenerates flight seed data from the raw Kaggle CSV
 │   └── build_hotel_seed.py     Regenerates hotel seed data from the raw AtliQ CSVs
 ├── config.py           Settings (API credentials, all optional — mock fallback if unset)
-├── tests/              115 tests across schemas, cache, clients, data service, agents, graph, and API
+├── tests/              126 tests across schemas, cache, clients, data service, agents, graph, and API
 ├── frontend/            React + TypeScript + Tailwind UI (design via Stitch)
 ├── requirements.txt
 └── README.md            (you are here)
 ```
 
 ## How it works
-
-```mermaid
-flowchart TD
-  Client
-  API
-  Orchestrator
-  Flight
-  Hotel
-  Activity
-  Pricing
-  Reallocate
-  Synthesize
-  Cache
-  OwnService
-  Amadeus
-  Google
-
-  Client --> API
-  API --> Orchestrator
-  Orchestrator --> Flight
-  Orchestrator --> Hotel
-  Orchestrator --> Activity
-  Flight --> Pricing
-  Hotel --> Pricing
-  Activity --> Pricing
-  Pricing --> Reallocate
-  Pricing --> Synthesize
-  Reallocate --> Flight
-  Reallocate --> Hotel
-  Reallocate --> Activity
-  Synthesize --> API
-  API --> Client
-
-  Flight --> Cache
-  Hotel --> Cache
-  Activity --> Cache
-
-  Flight --> OwnService
-  Hotel --> OwnService
-  Activity --> OwnService
-  Flight --> Amadeus
-  Hotel --> Amadeus
-  Activity --> Google
-```
-
-Notes:
-
-- max_negotiation_rounds = 3 (default); reallocation loop re-invokes only the flagged agent.
-- Cache TTLs: PRICE_CACHE_TTL_SECONDS (default 900s), REFERENCE_CACHE_TTL_SECONDS (default 86400s).
-
 
 1. `POST /plan-trip` kicks off a LangGraph run: `flight_agent`, `hotel_agent`,
    and `activity_agent` execute in parallel.
@@ -207,9 +157,11 @@ fresh every time.
 pytest tests/ -v
 ```
 
-36 tests: Pydantic schemas, pricing/reallocation logic (including the
-ceiling-drift edge case), all three domain agents, full graph integration
-(parallel fan-out/fan-in via LangGraph's `operator.add` reducer), and the
+126 tests: Pydantic schemas, pricing/reallocation logic (including the
+ceiling-drift edge case and floor-aware reallocation targeting), all
+three domain agents across their 3-tier data sources, the caching
+layer, the self-hosted data service, full graph integration (parallel
+fan-out/fan-in via LangGraph's `operator.add` reducer), and the
 FastAPI SSE endpoint.
 
 ## Running the frontend
