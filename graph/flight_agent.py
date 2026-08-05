@@ -27,15 +27,8 @@ logger = logging.getLogger(__name__)
 
 
 AIRLINES = ["IndiGo", "Air India", "SpiceJet", "Vistara", "Akasa Air"]
-# Amadeus flight offers return IATA carrier codes, not display names —
-# best-effort lookup for the common ones; falls back to the raw code.
 CARRIER_NAMES = {"6E": "IndiGo", "AI": "Air India", "SG": "SpiceJet", "UK": "Vistara", "QP": "Akasa Air"}
 
-# Real flights have a floor cost regardless of budget — a domestic flight
-# never actually costs ₹100 just because the ceiling shrank. Without this,
-# the ceiling-proportional pricing below made it impossible for a small
-# budget to ever exceed its own ceiling, which meant the negotiation loop
-# could never trigger from budget size alone.
 MIN_FLIGHT_PRICE = 2500.0
 
 _amadeus_client: AmadeusClient | None = None
@@ -105,17 +98,9 @@ def _live_search_flights_amadeus(origin: str, destination: str, departure_date: 
 
 
 def _mock_search_flights(origin: str, destination: str, start_date, budget_ceiling: float) -> list[FlightOption]:
-    """
-    Generates a handful of plausible flight options priced around the
-    given ceiling — some under, some slightly over, so the pricing
-    agent's logic has something realistic to react to. Prices never drop
-    below MIN_FLIGHT_PRICE, so a ceiling far below realistic market cost
-    correctly produces an over-ceiling result rather than a false fit.
-    """
     options = []
     base_departure = datetime.combine(start_date, datetime.min.time()) + timedelta(hours=6)
 
-    # Price options spread relative to ceiling: cheaper/direct, mid, pricier/nonstop
     price_ratios = [0.75, 0.90, 1.05]
     for i, ratio in enumerate(price_ratios):
         price = round(max(budget_ceiling * ratio, MIN_FLIGHT_PRICE), 2)
@@ -138,7 +123,6 @@ def run_flight_agent(state: TravelPlannerState) -> dict:
     options = None
 
     try:
-        # Tier 1: own data service (real stats, no rate limits, Indian metros only)
         if settings.own_flight_service_configured:
             try:
                 options = _live_search_flights_own_service(request.origin, request.destination, request.start_date)
@@ -146,10 +130,9 @@ def run_flight_agent(state: TravelPlannerState) -> dict:
                     raise OwnDataServiceError("Own service returned zero results")
                 data_source = "own_service"
             except OwnDataServiceError as exc:
-                  logger.warning("Own flight data service unavailable, falling back: %s", exc)
-                  options = None
+                logger.warning("Own flight data service unavailable, falling back: %s", exc)
+                options = None
 
-        # Tier 2: Amadeus (broader coverage, needs credentials)
         if options is None and settings.amadeus_configured:
             try:
                 options = _live_search_flights_amadeus(request.origin, request.destination, request.start_date)
@@ -159,13 +142,10 @@ def run_flight_agent(state: TravelPlannerState) -> dict:
             except AmadeusAPIError:
                 options = None
 
-        # Tier 3: mock (always available)
         if options is None:
             options = _mock_search_flights(request.origin, request.destination, request.start_date, ceiling)
             data_source = "mock"
 
-        # Pick the cheapest option that fits the ceiling; if none fit,
-        # take the cheapest available and let the pricing agent flag it.
         within_budget = [o for o in options if o.price <= ceiling]
         chosen = min(within_budget, key=lambda o: o.price) if within_budget else min(options, key=lambda o: o.price)
 
@@ -178,16 +158,17 @@ def run_flight_agent(state: TravelPlannerState) -> dict:
                 "candidates_considered": len(options),
                 "data_source": data_source,
             },
-            confidence=1.0 if within_budget else 0.6,  # lower confidence if we had to exceed ceiling
+            confidence=1.0 if within_budget else 0.6,
             budget_used=chosen.price,
         )
 
         return {
             "flight_result": chosen,
             "message_log": [message],
+            "flight_at_floor": not bool(within_budget),
         }
 
-    except Exception as exc:  # pragma: no cover - defensive path for unexpected failures
+    except Exception as exc:
         message = AgentMessage(
             agent_id=AgentID.FLIGHT,
             task_type="search_flights",
@@ -196,7 +177,6 @@ def run_flight_agent(state: TravelPlannerState) -> dict:
             error=str(exc),
         )
         return {
-            "flight_result": chosen,
+            "flight_result": None,
             "message_log": [message],
-            "flight_at_floor": not bool(within_budget),
         }
